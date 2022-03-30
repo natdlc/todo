@@ -1,5 +1,5 @@
 const insertStructure = () => {
-
+    
 }
 
 export {insertStructure}

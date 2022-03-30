@@ -1,10 +1,11 @@
-import './styles/reset.css';
-import './styles/style.css';
-import * as DOM from './dom/dom.js';
-
 (function () {
 
     console.log('hello');
-
+    //organize dom structure and styles
+        //start with appending html structure
+        //follow solid principles
+        //then organize styles
+    
+    //create mock logic through class / factory function
 
 })();
