@@ -1,3 +1,4 @@
 import './style.css';
+import {createTitle} from './dom-inserts';
 
-console.log('erer');
+createTitle('wasup');
