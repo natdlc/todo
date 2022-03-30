@@ -1,0 +1,5 @@
+const insertStructure = () => {
+
+}
+
+export {insertStructure}

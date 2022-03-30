@@ -21,6 +21,8 @@ time, mark, audio, video {
 	border: 0;
 	font-size: 100%;
 	vertical-align: baseline;
+	font-family: inherit;
+	font-size: inherit;
 }
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
