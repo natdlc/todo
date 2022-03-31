@@ -11,12 +11,13 @@ import './styles/main/2-lists.css';
     insertMain();
 })();
 
-//create mock logic through class
-
 /*
-
-
-
+TO DO (ironic)
+    implement adding new List in DOM
+    implement adding new Sublist in DOM
+    implement deleting List in DOM
+        create a button for deleting List in DOM
+    implement deleting Sublist in DOM
 */
 
 class List {
@@ -27,11 +28,11 @@ class List {
 
     sublists = []
 
-    createSublist (desc, time, duration) {
+    addSublist (desc, time, duration) {
         const sublist = new Sublist(desc, time, duration);
         this.sublists.push(sublist);
-    }
-}
+    };
+};
 
 class Sublist {
     constructor(desc, time, duration) {
@@ -39,9 +40,5 @@ class Sublist {
         this.time = time;
         this.duration = duration;
         this.checked = false;
-    }
-}
-
-const list1 = new List('Morning');
-list1.createSublist('toothbrush', '8PM', '2m');
-console.log(list1);
+    };
+};
