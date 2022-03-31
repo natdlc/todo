@@ -17,6 +17,7 @@ const insertListCheckmark = parent => {
 const insertListTitle = parent => {
     const h1 = document.createElement('h1');
     h1.innerText = 'List Title';
+    h1.setAttribute('contenteditable', '');
     parent.appendChild(h1);
 };
 

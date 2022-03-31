@@ -170,3 +170,14 @@ button:hover {
 .sublist-wrapper > *:last-child {
   font-size: 16px;
 }
+
+.list-header h1[contenteditable] {
+  cursor: pointer;
+  padding: 5px;
+  color: black;
+}
+
+.list-header h1[contenteditable]:empty::before {
+  content: 'Click to add or edit list';
+  color: gray;
+};
