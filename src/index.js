@@ -17,8 +17,6 @@ import './styles/main/2-lists.css';
 /*
 TO DO (ironic)
     ui
-        deleting list in DOM
-            create button for deleting List in DOM
         deleting sublist in DOM
         toggle checkmark for sublist
         toggle checkmark for list
