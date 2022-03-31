@@ -1,6 +1,9 @@
+import * as DOM from './dom/dom.js';
+
 (function () {
 
-    console.log('hello');
+    console.log(DOM);
+
     //organize dom structure and styles
         //start with appending html structure
         //follow solid principles
