@@ -1,4 +1,4 @@
-import calendar from '....';
+import calendar from '../../../assets/images/calendar.svg';
 
 const insertSideBar = parent => {
     const sidebar = document.createElement('div');

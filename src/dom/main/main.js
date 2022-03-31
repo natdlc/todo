@@ -1,5 +1,5 @@
-import insertSideBar from './0-sidebar/sidebar.js';
-import insertListsWrapper from './1-lists-wrapper/lists-wrapper.js';
+import {insertSideBar} from './0-sidebar/sidebar.js';
+import {insertListsWrapper} from './1-lists-wrapper/lists-wrapper.js';
 
 const insertMain = () => {
     const main = document.createElement('main');

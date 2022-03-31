@@ -1,4 +1,2 @@
-import insertHeader from './header/header.js';
-import insertMain from './main/main.js';
-
-export {insertHeader, insertMain}
+export {insertHeader} from './header/header.js';
+export {insertMain} from './main/main.js';

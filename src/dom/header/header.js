@@ -1,9 +1,10 @@
 const insertHeader = () => {
+    console.log('running');
     const header = document.createElement('header');
     insertTitle(header);
     insertDate(header);
     document.body.appendChild(header);
-}
+};
 
 const insertTitle = parent => {
     const title = document.createElement('h1');

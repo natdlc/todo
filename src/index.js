@@ -1,8 +1,10 @@
-import * as DOM from './dom/dom.js';
+import {insertHeader, insertMain} from './dom/dom.js';
+import './styles/reset.css';
+import './styles/style.css';
 
-(function () {
-
-    console.log(DOM);
+    console.log(insertHeader);
+    insertHeader();
+    insertMain();
 
     //organize dom structure and styles
         //start with appending html structure
@@ -10,5 +12,3 @@ import * as DOM from './dom/dom.js';
         //then organize styles
     
     //create mock logic through class / factory function
-
-})();
