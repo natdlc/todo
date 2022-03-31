@@ -1,5 +1,5 @@
-import {addSublistBtnEvent} from '../../../features/add-sublist-btn.js';
-import {listDelBtnEvent} from '../../../features/del-list-btn.js';
+import {addSublistBtnEvent} from '../../../features/add-sublist.js';
+import {listDelBtnEvent} from '../../../features/del-list.js';
 import {listCheckmarkEvent} from '../../../features/list-checkmark.js';
 
 const insertListHeader = parent => {

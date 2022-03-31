@@ -1,13 +1,18 @@
-.list-checkmark-checked {
+.list-checkmark-checked, 
+.sublist-checkmark-checked {
     border: 1px solid var(--ultragreen);
     color: var(--ultragreen);
 }
 
-.list-checkmark-checked:hover {
+.list-checkmark-checked:hover, 
+.sublist-checkmark-checked:hover {
     background-color: var(--ultragreen);
     color: var(--easygreen);
 }
 
-.list-title-checked {
+.list-title-checked,
+.sublist-desc-checked,
+.sublist-time-checked,
+.sublist-duration-checked {
     text-decoration-line: line-through;
 }

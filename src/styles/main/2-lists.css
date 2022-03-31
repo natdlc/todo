@@ -51,7 +51,7 @@
 }
 
 .list-checkmark:active {
-  transform: scale(1.1);
+  transform: scale(1.15);
   background:black;
   color: var(--ultragreen);
 }

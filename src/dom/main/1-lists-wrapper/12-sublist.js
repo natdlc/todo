@@ -1,4 +1,5 @@
-import {listDelBtnEvent} from '../../../features/del-sublist-btn.js';
+import {listDelBtnEvent} from '../../../features/del-sublist.js';
+import {sublistCheckmarkEvent} from '../../../features/sublist-checkmark.js';
 
 const insertSublistWrapper = parent => {
     const sublistWrapper = document.createElement('div');
@@ -15,6 +16,7 @@ const insertSublistCheckmark = parent => {
     const btn = document.createElement('button');
     btn.classList.add('sublist-checkmark', 'list-checkmark');
     btn.innerHTML = '&#10004;';
+    btn.addEventListener('click', sublistCheckmarkEvent);
     parent.appendChild(btn);
 };
 

@@ -1,5 +1,5 @@
 import {insertHeader, insertMain} from './dom/dom.js';
-import {addList} from './features/add-list-btn.js';
+import {addList} from './features/add-list.js';
 import './styles/0-reset.css';
 import './styles/0-style.css';
 import './styles/header/header.css';
@@ -17,9 +17,7 @@ import './styles/main/3-lists-checked.css';
 /*
 TO DO (ironic)
     ui
-        list checkmark event
-        sublist checkmark event
-        list checkmark toggles sublists
+        list checkmark toggles sublists (coming soon)
 */
 
 class List {
