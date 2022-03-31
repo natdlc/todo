@@ -1,3 +1,5 @@
+import {listDelBtnEvent} from '../../../features/del-sublist-btn.js';
+
 const insertSublistWrapper = parent => {
     const sublistWrapper = document.createElement('div');
     sublistWrapper.classList.add('sublist-wrapper');
@@ -40,6 +42,7 @@ const insertSublistDuration = parent => {
 const insertDelBtn = parent => {
     const btn = document.createElement('button');
     btn.innerHTML = '&#10060;';
+    btn.addEventListener('click', listDelBtnEvent);
     parent.appendChild(btn);
 };
 

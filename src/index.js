@@ -1,6 +1,5 @@
 import {insertHeader, insertMain} from './dom/dom.js';
 import {addList} from './features/add-list-btn.js';
-import {addSublist} from './features/add-sublist-btn.js';
 import './styles/0-reset.css';
 import './styles/0-style.css';
 import './styles/header/header.css';
@@ -17,7 +16,6 @@ import './styles/main/2-lists.css';
 /*
 TO DO (ironic)
     ui
-        deleting sublist in DOM
         toggle checkmark for sublist
         toggle checkmark for list
         toggle list checkmark complete if all sublist checked
