@@ -16,7 +16,6 @@ import './styles/main/2-lists.css';
 
 /*
 TO DO (ironic)
-    implement adding new Sublist in DOM **
     implement deleting List in DOM
         create a button for deleting List in DOM
     implement deleting Sublist in DOM
