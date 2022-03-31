@@ -11,9 +11,5 @@ import './styles/main/2-lists.css';
     insertMain();
 })();
 
-//organize dom structure and styles
-    //plan and create a new branch any future changes
-    //organize styles
-
 //create mock logic through class / factory function
 
