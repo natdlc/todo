@@ -1,5 +1,5 @@
 import {insertHeader, insertMain} from './dom/dom.js';
-import {addList} from './features/add-list.js'
+import {addList} from './features/add-list-btn.js';
 import './styles/0-reset.css';
 import './styles/0-style.css';
 import './styles/header/header.css';
