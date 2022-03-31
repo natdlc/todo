@@ -1,6 +1,10 @@
 import {insertHeader, insertMain} from './dom/dom.js';
-import './styles/reset.css';
-import './styles/style.css';
+import './styles/0-reset.css';
+import './styles/0-style.css';
+import './styles/header/header.css';
+import './styles/main/0-main.css';
+import './styles/main/1-sidebar.css';
+import './styles/main/2-lists.css';
 
 (function (){
     insertHeader();
