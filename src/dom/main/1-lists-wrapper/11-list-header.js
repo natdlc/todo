@@ -1,4 +1,5 @@
 import {addSublistBtnEvent} from '../../../features/add-sublist-btn.js';
+import {listDelBtnEvent} from '../../../features/del-list-btn.js';
 
 const insertListHeader = parent => {
     const listHeader = document.createElement('div');
@@ -6,6 +7,7 @@ const insertListHeader = parent => {
     insertListCheckmark(listHeader); 
     insertListTitle(listHeader);
     insertAddSublistBtn(listHeader);
+    insertDelBtn(listHeader);
     parent.appendChild(listHeader);
 };
 
@@ -18,7 +20,6 @@ const insertListCheckmark = parent => {
 
 const insertListTitle = parent => {
     const h1 = document.createElement('h1');
-    h1.innerText = 'List Title';
     h1.setAttribute('contenteditable', '');
     parent.appendChild(h1);
 };
@@ -30,5 +31,13 @@ const insertAddSublistBtn = parent => {
     btn.addEventListener('click', addSublistBtnEvent);
     parent.appendChild(btn);
 };
+
+const insertDelBtn = parent => {
+    const btn = document.createElement('button');
+    btn.classList.add('del-list-btn');
+    btn.innerHTML = '&#10060;'
+    btn.addEventListener('click', listDelBtnEvent);
+    parent.appendChild(btn);
+}
 
 export {insertListHeader};

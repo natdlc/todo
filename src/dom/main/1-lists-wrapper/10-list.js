@@ -1,5 +1,5 @@
-import {insertListHeader} from './list-header.js';
-import {insertSublistWrapper} from './sublist.js';
+import {insertListHeader} from './11-list-header.js';
+import {insertSublistWrapper} from './12-sublist.js';
 
 const insertList = parent => {
     const list = document.createElement('div');

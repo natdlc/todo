@@ -1,98 +1,116 @@
 .lists-wrapper {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-    padding: 30px;
-    background-color: lightcyan;
-    width: 100%;
-    overflow: auto;
-  }
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 30px;
+  background-color: lightcyan;
+  width: 100%;
+  overflow: auto;
+}
 
-  .list {
-    background: rgb(211, 255, 211);
-    width: 50%;
-    padding: 30px;
-    border-radius: 15px;
-  }
-  
-  .list-header {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-  }
-  
-  .sublist-wrapper {
-    padding: 15px;
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    position: relative;
-  }
-  
-  .list-checkmark {
-    border: 1px solid gray;
-    border-radius: 50%;
-    color: lightcyan;
-  }
-  
-  .list-checkmark:hover {
-    color: black;
-    background: none;
-  }
-  
-  .sublist-checkmark {
-    width: 24px;
-    height: 24px;
-    font-size: 20px;
-  }
-  
-  .sublist {
-    padding: 5px;
-    width: 60%;
-    border: none;
-    background: none;
-    border-bottom: 1px solid black;
-    color: black;
-    font-weight: 300;
-    cursor: pointer;
-  }
-  
-  .sublist[contenteditable]:empty::before {
-    font-weight: 100;
-    color: black;
-  }
-  
-  .sublist-desc[contenteditable]:empty::before {
-    content: 'Click to edit sublist';
-  }
-  
-  .sublist-time {
-    width: 15%;
-  }
-  
-  .sublist-time[contenteditable]:empty::before {
-    content: '8:00 PM';
-  }
-  
-  .sublist-duration {
-    width: 15%;
-  }
-  
-  .sublist-duration[contenteditable]:empty::before {
-    content: '1h 30m';
-  }
-  
-  .sublist-wrapper > *:last-child {
-    font-size: 16px;
-  }
-  
-  .list-header h1[contenteditable] {
-    cursor: pointer;
-    padding: 5px;
-    color: black;
-  }
-  
-  .list-header h1[contenteditable]:empty::before {
-    content: 'Click edit list';
-    color: gray;
-  }
+.list {
+  background: rgb(211, 255, 211);
+  width: 50%;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.list-header {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  position: relative;
+  background-color: rgb(195, 232, 195);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  padding: 15px;
+}
+
+.del-list-btn {
+  display: flex;
+  width: 55px;
+  height: 55px;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: 5px;
+}
+
+.sublist-wrapper {
+  padding: 5px 15px 25px 45px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  position: relative;
+}
+
+.list-checkmark {
+  border: 1px solid gray;
+  border-radius: 50%;
+  color: lightcyan;
+}
+
+.list-checkmark:hover {
+  color: black;
+  background: none;
+}
+
+.sublist-checkmark {
+  width: 24px;
+  height: 24px;
+  font-size: 20px;
+}
+
+.sublist {
+  padding: 5px 10px 5px 10px;
+  width: 60%;
+  border: none;
+  background: none;
+  border-bottom: 1px solid black;
+  color: black;
+  font-weight: 300;
+  cursor: pointer;
+  line-height: 25px;
+}
+
+.sublist[contenteditable]:empty::before {
+  font-weight: 100;
+  color: black;
+}
+
+.sublist-desc[contenteditable]:empty::before {
+  content: 'Click to edit sublist';
+}
+
+.sublist-time {
+  width: 15%;
+}
+
+.sublist-time[contenteditable]:empty::before {
+  content: '8:00 PM';
+}
+
+.sublist-duration {
+  width: 15%;
+}
+
+.sublist-duration[contenteditable]:empty::before {
+  content: '1h 30m';
+}
+
+.sublist-wrapper > *:last-child {
+  font-size: 16px;
+}
+
+.list-header h1[contenteditable] {
+  cursor: pointer;
+  padding: 5px;
+  color: black;
+}
+
+.list-header h1[contenteditable]:empty::before {
+  content: 'Click to edit list';
+  color: gray;
+}

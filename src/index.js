@@ -16,9 +16,13 @@ import './styles/main/2-lists.css';
 
 /*
 TO DO (ironic)
-    implement deleting List in DOM
-        create a button for deleting List in DOM
-    implement deleting Sublist in DOM
+    ui
+        deleting list in DOM
+            create button for deleting List in DOM
+        deleting sublist in DOM
+        toggle checkmark for sublist
+        toggle checkmark for list
+        toggle list checkmark complete if all sublist checked
 */
 
 class List {

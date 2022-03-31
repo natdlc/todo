@@ -1,4 +1,4 @@
-import {insertList} from './list.js';
+import {insertList} from './10-list.js';
 
 const insertListsWrapper = parent => {
     const listsWrapper = document.createElement('div');
