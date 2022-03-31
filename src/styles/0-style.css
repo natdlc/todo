@@ -1,5 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
+:root {
+  --easygreen: rgb(211, 255, 211);
+  --mediumgreen: rgb(195, 232, 195);
+  --hardgreen: rgb(146, 211, 146);
+  --ultragreen: rgb(124, 204, 124);
+}
+
 * {
   font-family: 'Roboto', sans-serif;
   box-sizing: border-box;
@@ -38,6 +45,6 @@ button {
 }
 
 button:hover {
-  background: lightgreen;
+  background: var(--ultragreen);
   color: black;
 }

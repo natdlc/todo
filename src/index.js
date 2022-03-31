@@ -6,6 +6,7 @@ import './styles/header/header.css';
 import './styles/main/0-main.css';
 import './styles/main/1-sidebar.css';
 import './styles/main/2-lists.css';
+import './styles/main/3-lists-checked.css';
 
 (function (){
     insertHeader();
@@ -16,9 +17,9 @@ import './styles/main/2-lists.css';
 /*
 TO DO (ironic)
     ui
-        toggle checkmark for sublist
-        toggle checkmark for list
-        toggle list checkmark complete if all sublist checked
+        list checkmark event
+        sublist checkmark event
+        list checkmark toggles sublists
 */
 
 class List {

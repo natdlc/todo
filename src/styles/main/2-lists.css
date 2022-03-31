@@ -22,10 +22,38 @@
   align-items: center;
   gap: 25px;
   position: relative;
-  background-color: rgb(195, 232, 195);
+  background-color: var(--mediumgreen);
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   padding: 15px;
+}
+
+.list-title[contenteditable] {
+  cursor: pointer;
+  padding: 5px;
+  color: black;
+}
+
+.list-title[contenteditable]:empty::before {
+  content: 'Click to edit list';
+  color: gray;
+}
+
+.list-checkmark {
+  border: 1px solid black;
+  border-radius: 50%;
+  color: var(--mediumgreen);
+}
+
+.list-checkmark:hover {
+  color: black;
+  background: none;
+}
+
+.list-checkmark:active {
+  transform: scale(1.1);
+  background:black;
+  color: var(--ultragreen);
 }
 
 .del-list-btn {
@@ -46,18 +74,8 @@
   position: relative;
 }
 
-.list-checkmark {
-  border: 1px solid gray;
-  border-radius: 50%;
-  color: lightcyan;
-}
-
-.list-checkmark:hover {
-  color: black;
-  background: none;
-}
-
-.sublist-checkmark {
+.sublist-checkmark { 
+  color: var(--easygreen);
   width: 24px;
   height: 24px;
   font-size: 20px;
@@ -102,15 +120,4 @@
 
 .sublist-wrapper > *:last-child {
   font-size: 16px;
-}
-
-.list-header h1[contenteditable] {
-  cursor: pointer;
-  padding: 5px;
-  color: black;
-}
-
-.list-header h1[contenteditable]:empty::before {
-  content: 'Click to edit list';
-  color: gray;
 }

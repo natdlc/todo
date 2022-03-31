@@ -1,0 +1,13 @@
+.list-checkmark-checked {
+    border: 1px solid var(--ultragreen);
+    color: var(--ultragreen);
+}
+
+.list-checkmark-checked:hover {
+    background-color: var(--ultragreen);
+    color: var(--easygreen);
+}
+
+.list-title-checked {
+    text-decoration-line: line-through;
+}

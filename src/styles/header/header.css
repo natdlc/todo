@@ -3,15 +3,15 @@ header {
     display: flex;
     justify-content: space-between;
     padding: 30px;
-    background-color: rgb(211, 255, 211);
+    background-color: var(--easygreen);
 }
 
 input[type="date"] {
-    background-color: rgb(211, 255, 211);
+    background-color: var(--easygreen);
     font-weight: 600;
     font-size: 16px;
     padding: 5px;
-    border: 1px solid rgb(211, 255, 211);
+    border: none;
     appearance: none;
     border-radius: 10px;
     text-rendering: none;
