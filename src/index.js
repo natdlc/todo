@@ -17,7 +17,12 @@ import './styles/main/3-lists-checked.css';
 /*
 TO DO (ironic)
     ui
-        list checkmark toggles sublists (coming soon)
+        display random motivation quotes
+    
+    backend
+        study local storage
+        implement class logic with local storage
+        connect class logic with dom
 */
 
 class List {
