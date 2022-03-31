@@ -1,5 +1,6 @@
 import {insertHeader, insertMain} from './dom/dom.js';
 import {addList} from './features/add-list-btn.js';
+import {addSublist} from './features/add-sublist-btn.js';
 import './styles/0-reset.css';
 import './styles/0-style.css';
 import './styles/header/header.css';
@@ -10,13 +11,12 @@ import './styles/main/2-lists.css';
 (function (){
     insertHeader();
     insertMain();
-
     addList();
 })();
 
 /*
 TO DO (ironic)
-    implement adding new Sublist in DOM
+    implement adding new Sublist in DOM **
     implement deleting List in DOM
         create a button for deleting List in DOM
     implement deleting Sublist in DOM

@@ -1,5 +1,4 @@
 const insertHeader = () => {
-    console.log('running');
     const header = document.createElement('header');
     insertTitle(header);
     insertDate(header);

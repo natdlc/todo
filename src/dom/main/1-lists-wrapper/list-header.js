@@ -1,3 +1,5 @@
+import {addSublistBtnEvent} from '../../../features/add-sublist-btn.js';
+
 const insertListHeader = parent => {
     const listHeader = document.createElement('div');
     listHeader.classList.add('list-header');
@@ -25,6 +27,7 @@ const insertAddSublistBtn = parent => {
     const btn = document.createElement('button');
     btn.classList.add('add-sublist-btn');
     btn.innerText = '+';
+    btn.addEventListener('click', addSublistBtnEvent);
     parent.appendChild(btn);
 };
 
