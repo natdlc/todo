@@ -12,13 +12,34 @@ const domChangeList = (checkmark, listTitle) => {
 }
 
 const domChangeSublist = list => {
-    for(let i = 0; i < list.length; i++) {
-        const sublist = list[i];
-        update(sublist);
+    const listHeader = list[0];
+    const listHeaderChecked = listHeader.children[0].classList.contains('list-checkmark-checked');
+    if (listHeaderChecked) {
+        for(let i = 0; i < list.length; i++) {
+            const sublist = list[i];
+            update(sublist);
+        }
     }
+
+    else if (!listHeaderChecked) {
+        for(let i = 0; i < list.length; i++) {
+            const sublist = list[i];
+            update(sublist);
+        }
+    }
+
+    // if list checkmark is unchecked
+        // if some sublists are unchecked
+            // check only those sublists
+        // if all sublists are unchecked
+            // check all sublists
+
+    // if list checkmark is checked
+        // uncheck all sublists
+    
 }
 
-const update = sublist => {
+const update = (sublist) => {
     if (sublist.classList.contains('sublist-wrapper')) {
 
         const checkmark = sublist.children[0];
