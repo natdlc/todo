@@ -3,62 +3,63 @@ const sublistCheckmarkEvent = e => {
     const sublistDesc = e.path[1].children[1];
     const sublistTime = e.path[1].children[2];
     const sublistDuration = e.path[1].children[3]
-    domChange(checkmark, sublistDesc, sublistTime, sublistDuration);
-    domChangeList(e);
+    domSublistChange(checkmark, sublistDesc, sublistTime, sublistDuration);
+    domSublistChangesList(e);
 };
 
-const domChange = (checkmark, desc,time,duration) => {
+const domSublistChange = (checkmark,desc,time,duration) => {
     checkmark.classList.toggle('sublist-checkmark-checked');
     desc.classList.toggle('sublist-desc-checked');
     time.classList.toggle('sublist-time-checked');
     duration.classList.toggle('sublist-duration-checked');
 };
 
-const domChangeList = (e) => {
+const domSublistChangesList = e => {
     const listBox = e.target.parentNode.parentNode.children;
     const listHeader = listBox[0];
+    const listHeaderCheckmark = listBox[0].children[0];
+    const sublistCheckmarkClass = e.target.classList;
     const numOfSublists = listBox.length-1;
     const numOfCheckedSublists = countCheckedSublists(listBox);
+    const listHeaderChecked = listHeaderCheckmark.classList.contains('list-checkmark-checked');
+    const sublistCheckmarkChecked = sublistCheckmarkClass.contains('sublist-checkmark-checked');
+
+    if (listHeaderChecked) if (!(sublistCheckmarkChecked)) toggleListHeader(listHeader);
     if (numOfCheckedSublists == numOfSublists) toggleListHeader(listHeader);
-    // if list header is checked
-        // if one of the sublists is unchecked
-            // uncheck list header
-}
+};
 
 const toggleListHeader = listHeader => {
+
     const checkmark = listHeader.children[0];
     const title = listHeader.children[1];
+
     checkmark.classList.toggle('list-checkmark-checked');
     title.classList.toggle('list-title-checked');
-}
+};
 
 const countCheckedSublists = listBox => {
     let counter = 0;
+
     for (let i = 0; i < listBox.length; i++) {
-        const listBoxChild = listBox[i];
-        if (listBoxChild.classList.contains('sublist-wrapper')) {
-            const sublist = listBoxChild;
-            if (isChecked(sublist)) {
-                counter++;
-            }
+        const isSublist = listBox[i].classList.contains('sublist-wrapper');
+
+        if (isSublist) {
+            const sublist = listBox[i];
+            if (isSublistChecked(sublist)) counter++;
         }
     }
+
     return counter;
-}
+};
 
-const isChecked = sublist => {
-    const checkmark = sublist.children[0];
-    const desc = sublist.children[1];
-    const time = sublist.children[2];
-    const duration = sublist.children[3];
+const isSublistChecked = sublist => {
+    const checkmarkChecked = sublist.children[0].classList.contains('sublist-checkmark-checked');
+    const descChecked = sublist.children[1].classList.contains('sublist-desc-checked');
+    const timeChecked = sublist.children[2].classList.contains('sublist-time-checked');
+    const durationChecked = sublist.children[3].classList.contains('sublist-duration-checked');
 
-    if (checkmark.classList.contains('sublist-checkmark-checked')
-    && desc.classList.contains('sublist-desc-checked')
-    && time.classList.contains('sublist-time-checked')
-    && duration.classList.contains('sublist-duration-checked')) {
-        return true;
-    }
+    if (checkmarkChecked && descChecked && timeChecked && durationChecked) return true;
 }
 
 
-export {sublistCheckmarkEvent};
+export {sublistCheckmarkEvent, toggleListHeader};
