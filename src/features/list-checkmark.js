@@ -2,44 +2,40 @@ const listCheckmarkEvent = e => {
     const checkmark = e.target;
     const listTitle = e.path[1].children[1];
     const list = e.path[2].children
-    domChangeList(checkmark, listTitle);
-    domChangeSublist(list);
+    domListChange(checkmark, listTitle);
+    domListChangesSublist(list);
 };
 
-const domChangeList = (checkmark, listTitle) => {
+const domListChange = (checkmark, listTitle) => {
     checkmark.classList.toggle('list-checkmark-checked');
     listTitle.classList.toggle('list-title-checked');
 }
 
-const domChangeSublist = list => {
+const domListChangesSublist = list => {
     const listHeader = list[0];
     const listHeaderChecked = listHeader.children[0].classList.contains('list-checkmark-checked');
+    const sublistArray = [];
+    
+    for (let i = 1; i < list.length; i++) {sublistArray.push(list[i]);};
+
     if (listHeaderChecked) {
-        for(let i = 0; i < list.length; i++) {
-            const sublist = list[i];
-            update(sublist);
-        }
+        sublistArray.forEach(sublist => {
+            const checkmark = sublist.children[0];
+            const checkmarkChecked = checkmark.classList.contains('sublist-checkmark-checked');
+            !checkmarkChecked ? toggleSublist(sublist) : false;
+        });
     }
 
     else if (!listHeaderChecked) {
-        for(let i = 0; i < list.length; i++) {
-            const sublist = list[i];
-            update(sublist);
-        }
-    }
-
-    // if list checkmark is unchecked
-        // if some sublists are unchecked
-            // check only those sublists
-        // if all sublists are unchecked
-            // check all sublists
-
-    // if list checkmark is checked
-        // uncheck all sublists
-    
+        sublistArray.forEach(sublist => {
+            const checkmark = sublist.children[0];
+            const checkmarkChecked = checkmark.classList.contains('sublist-checkmark-checked');
+            checkmarkChecked ? toggleSublist(sublist) : false;
+        });
+    };
 }
 
-const update = (sublist) => {
+const toggleSublist = sublist => {
     if (sublist.classList.contains('sublist-wrapper')) {
 
         const checkmark = sublist.children[0];

@@ -2,7 +2,7 @@ const sublistCheckmarkEvent = e => {
     const checkmark = e.target;
     const sublistDesc = e.path[1].children[1];
     const sublistTime = e.path[1].children[2];
-    const sublistDuration = e.path[1].children[3]
+    const sublistDuration = e.path[1].children[3];
     domSublistChange(checkmark, sublistDesc, sublistTime, sublistDuration);
     domSublistChangesList(e);
 };
