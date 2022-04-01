@@ -7,9 +7,7 @@ const addSublistBtnEvent = e => {
     const listHeaderCheckmark = e.path[1].children[0];
     const listHeaderChecked = listHeaderCheckmark.classList.contains('list-checkmark-checked');
     
-    if (listHeaderChecked) {
-        toggleListHeader(listHeader);
-    }
+    if (listHeaderChecked) {toggleListHeader(listHeader);}
 
     insertSublistWrapper(parentList);
 };
