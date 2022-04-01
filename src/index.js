@@ -21,7 +21,7 @@ TO DO (ironic)
         change date format for date input
         display random motivation quotes
     
-    backend
+    database
         study local storage
         implement class logic with local storage
         connect class logic with dom
