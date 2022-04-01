@@ -4,18 +4,26 @@
     flex-direction: column;
     padding: 30px 60px 0 60px;
     height: 100%;
-    gap: 10px;
+    gap: 20px;
   }
   
   .sidebar-wrappers {
     display: flex;
     align-items: center;
+    padding: 8px;
     gap: 10px;
+  }
+
+  .sidebar-wrappers:hover {
+    background-color: lightgray;
+    border-radius: 10px;
+    cursor: pointer;
   }
   
   .sidebar-wrappers img {
     width: 24px;
   }
+
   
   .add-list-btn {
     align-self: center;

@@ -48,10 +48,11 @@
 .list-checkmark:hover {
   color: black;
   background: none;
+  transform: scale(1.1);
 }
 
 .list-checkmark:active {
-  transform: scale(1.15);
+  transform: scale(1.2);
   background:black;
   color: var(--ultragreen);
 }

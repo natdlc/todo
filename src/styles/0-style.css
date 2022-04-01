@@ -47,4 +47,5 @@ button {
 button:hover {
   background: var(--ultragreen);
   color: black;
+  transform: scale(1.2);
 }

@@ -12,12 +12,13 @@ import './styles/main/3-lists-checked.css';
     insertHeader();
     insertMain();
     addList();
+
 })();
 
 /*
-TO DO (ironic)
+TO DO
     ui
-        ** list checkmark ~ sublist entries
+        **change date display from month number to month text
         change date format for date input
         display random motivation quotes
     

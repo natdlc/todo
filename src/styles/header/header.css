@@ -13,7 +13,7 @@ header {
 }
 
 input[type="date"] {
-    background-color: var(--easygreen);
+    background-color: var(--ultragreen);
     font-weight: 600;
     font-size: 26px;
     padding: 15px;
@@ -21,4 +21,10 @@ input[type="date"] {
     appearance: none;
     border-radius: 10px;
     text-rendering: none;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    background-color: var(--easygreen);
+    padding: 5px;
+    border-radius: 5px;
 }
