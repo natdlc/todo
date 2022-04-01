@@ -8,6 +8,7 @@ const insertListHeader = parent => {
     insertListCheckmark(listHeader); 
     insertListTitle(listHeader);
     insertAddSublistBtn(listHeader);
+    insertPriorityIndicator(listHeader);
     insertDelBtn(listHeader);
     parent.appendChild(listHeader);
 };
@@ -30,10 +31,17 @@ const insertListTitle = parent => {
 const insertAddSublistBtn = parent => {
     const btn = document.createElement('button');
     btn.classList.add('add-sublist-btn');
-    btn.innerText = '+';
+    btn.innerText = 'Add Sublist';
     btn.addEventListener('click', addSublistBtnEvent);
     parent.appendChild(btn);
 };
+
+const insertPriorityIndicator = parent => {
+    const p = document.createElement('p');
+    p.innerText = '!';
+    p.classList.add('medium-priority-indicator');
+    parent.appendChild(p);
+}
 
 const insertDelBtn = parent => {
     const btn = document.createElement('button');

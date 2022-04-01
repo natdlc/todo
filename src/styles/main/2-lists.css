@@ -9,12 +9,13 @@
 }
 
 .list {
-  background: rgb(211, 255, 211);
-  width: 50%;
+  background: rgb(255, 255, 255);
+  width: 63%;
   border-radius: 15px;
   display: flex;
   flex-direction: column;
   gap: 10px;
+  box-shadow: 0 1px 3px rgb(0,0,0,0.4)
 }
 
 .list-header {
@@ -28,21 +29,10 @@
   padding: 15px;
 }
 
-.list-title[contenteditable] {
-  cursor: pointer;
-  padding: 5px;
-  color: black;
-}
-
-.list-title[contenteditable]:empty::before {
-  content: 'Click to edit list';
-  color: gray;
-}
-
 .list-checkmark {
-  border: 1px solid black;
   border-radius: 50%;
   color: var(--mediumgreen);
+  box-shadow: 0 1px 5px rgb(0,0,0,0.6);
 }
 
 .list-checkmark:hover {
@@ -57,14 +47,78 @@
   color: var(--ultragreen);
 }
 
+
+.list-title[contenteditable] {
+  cursor: pointer;
+  padding: 10px 20px;
+  color: black;
+  border-radius: 10px;
+}
+
+.list-title[contenteditable]:focus {
+  cursor: pointer;
+  outline: none;
+}
+
+.list-title[contenteditable]:empty::before {
+  content: 'Click to edit list';
+  color: gray;
+}
+
+.add-sublist-btn {
+  width: 100px;
+  height: 40px;
+  border-radius: 15px;
+  font-size: 12px;
+  background: white;
+  color: var(--extremegreen);
+  padding: 0 10px;
+}
+
+.add-sublist-btn:hover {
+  background: white;
+  color: var(--extremegreen);
+  transform: scale(1.08);
+}
+
+.add-sublist-btn:active {
+  transform: scale(1.12);
+}
+
+.high-priority-indicator, .medium-priority-indicator {
+  font-size: 32px;
+  font-weight: 600;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  padding: 10px;
+  display: none;
+  /* display: flex; */
+  justify-content: center;
+  align-items: center;
+  color: var(--lightred);
+  cursor: default;
+  box-shadow: 0 1px 6px rgb(0,0,0,0.4);
+}
+
+.high-priority-indicator-active, .medium-priority-indicator-active {
+  display: block;
+}
+
+.medium-priority-indicator {
+  background-color: white;
+  color: var(--darkyellow);
+}
+
 .del-list-btn {
   display: flex;
-  width: 55px;
-  height: 55px;
+  font-size: 24px;
+  width: 44px;
+  height: 44px;
   justify-content: center;
   align-items: center;
   position: absolute;
-  right: 5px;
+  right: 10px;
 }
 
 .sublist-wrapper {
@@ -76,10 +130,12 @@
 }
 
 .sublist-checkmark { 
-  color: var(--easygreen);
+  color: white;
   width: 24px;
   height: 24px;
   font-size: 20px;
+  border: none;
+  box-shadow: 0 1px 5px rgb(0,0,0,0.6);
 }
 
 .sublist {
@@ -104,7 +160,7 @@
 }
 
 .sublist-time {
-  width: 15%;
+  width: 10%;
 }
 
 .sublist-time[contenteditable]:empty::before {
@@ -112,13 +168,43 @@
 }
 
 .sublist-duration {
-  width: 15%;
+  width: 10%;
 }
 
 .sublist-duration[contenteditable]:empty::before {
   content: '1h 30m';
 }
 
-.sublist-wrapper > *:last-child {
+*[contenteditable] {
+  border: none;
+  outline: none;
+  box-shadow: 0 1px 3px rgb(0,0,0,0.4)
+}
+
+select {
   font-size: 16px;
+  background-color: var(--easygreen);
+  padding: 5px;
+  font-weight: 400;
+  width: 15%;
+  outline: none;
+  border: none;
+  box-shadow: 0 1px 6px rgb(0,0,0,0.4);
+}
+
+option {
+  font-weight: 400;
+}
+
+option:nth-child(2) {
+  background-color: var(--lightyellow);
+}
+
+option:nth-child(3) {
+  background-color: var(--lightred);
+}
+
+.sublist-wrapper > *:last-child {
+  font-size: 14px;
+  box-shadow: 0 1px 6px rgb(0,0,0,0.4);
 }

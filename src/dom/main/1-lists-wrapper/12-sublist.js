@@ -8,6 +8,7 @@ const insertSublistWrapper = parent => {
     insertSublistDesc(sublistWrapper);
     insertSublistTime(sublistWrapper);
     insertSublistDuration(sublistWrapper);
+    insertPrioritySelection(sublistWrapper);
     insertDelBtn(sublistWrapper);
     parent.appendChild(sublistWrapper);
 };
@@ -40,6 +41,28 @@ const insertSublistDuration = parent => {
     p.setAttribute('contenteditable', '');
     parent.appendChild(p);
 };
+
+const insertPrioritySelection = parent => {
+    const select = document.createElement('select');
+    const option1 = document.createElement('option');
+    const option2 = document.createElement('option');
+    const option3 = document.createElement('option');
+
+    option1.setAttribute('value', 'low');
+    option1.innerText = 'Low';
+
+    option2.setAttribute('value', 'medium');
+    option2.innerText = 'Medium';
+
+    option3.setAttribute('value', 'high');
+    option3.innerText = 'High';
+
+    select.appendChild(option1);
+    select.appendChild(option2);
+    select.appendChild(option3);
+
+    parent.appendChild(select);
+}
 
 const insertDelBtn = parent => {
     const btn = document.createElement('button');

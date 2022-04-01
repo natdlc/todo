@@ -5,6 +5,13 @@
   --mediumgreen: rgb(195, 232, 195);
   --hardgreen: rgb(146, 211, 146);
   --ultragreen: rgb(124, 204, 124);
+  --extremegreen: rgb(34, 112, 34);
+
+  --lightred: rgb(255, 165, 165);
+  --darkred: rgb(87, 14, 14);
+
+  --lightyellow: rgb(255, 255, 143);
+  --darkyellow: rgb(247,189,1);
 }
 
 * {
@@ -42,10 +49,11 @@ button {
   align-items: center;
   cursor: pointer;
   border-radius: 50%;
+  box-shadow: 0 1px 6px rgb(0,0,0,0.4)
 }
 
 button:hover {
-  background: var(--ultragreen);
+  background: lightgray;
   color: black;
   transform: scale(1.2);
 }

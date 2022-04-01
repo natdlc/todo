@@ -52,7 +52,7 @@ const insertTomorrowText = parent => {
 const insertAddListBtn = parent => {
     const btn = document.createElement('button');
     btn.classList.add('add-list-btn');
-    btn.innerText = '+';
+    btn.innerText = 'Add List';
     parent.appendChild(btn);
 };
 
