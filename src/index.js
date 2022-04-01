@@ -17,6 +17,8 @@ import './styles/main/3-lists-checked.css';
 /*
 TO DO (ironic)
     ui
+        ** list checkmark ~ sublist entries
+        change date format for date input
         display random motivation quotes
     
     backend
