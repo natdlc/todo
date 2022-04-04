@@ -36,11 +36,6 @@
   }
 
   .add-list-btn:hover {
-    transform: scale(1.08);
     background: var(--mediumgreen);
     border: 1px solid var(--mediumgreen);
-  }
-
-  .add-list-btn:active {
-    transform: scale(1.12);
   }

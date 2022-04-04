@@ -8,7 +8,7 @@
   --extremegreen: rgb(34, 112, 34);
 
   --lightred: rgb(255, 165, 165);
-  --darkred: rgb(87, 14, 14);
+  --darkred: rgb(169, 2, 2);
 
   --lightyellow: rgb(255, 255, 143);
   --darkyellow: rgb(247,189,1);
@@ -55,5 +55,4 @@ button {
 button:hover {
   background: lightgray;
   color: black;
-  transform: scale(1.2);
 }

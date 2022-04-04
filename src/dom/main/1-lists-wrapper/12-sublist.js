@@ -47,19 +47,24 @@ const insertPrioritySelection = parent => {
     const option1 = document.createElement('option');
     const option2 = document.createElement('option');
     const option3 = document.createElement('option');
+    const option4 = document.createElement('option');
 
-    option1.setAttribute('value', 'low');
-    option1.innerText = 'Low';
+    option1.setAttribute('value', 'default');
+    option1.innerText = '--Prio Level--';
 
-    option2.setAttribute('value', 'medium');
-    option2.innerText = 'Medium';
+    option2.setAttribute('value', 'low');
+    option2.innerText = 'Low';
 
-    option3.setAttribute('value', 'high');
-    option3.innerText = 'High';
+    option3.setAttribute('value', 'medium');
+    option3.innerText = 'Medium';
+
+    option4.setAttribute('value', 'high');
+    option4.innerText = 'High';
 
     select.appendChild(option1);
     select.appendChild(option2);
     select.appendChild(option3);
+    select.appendChild(option4);
 
     parent.appendChild(select);
 }

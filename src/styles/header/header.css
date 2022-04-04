@@ -21,7 +21,7 @@ input[type="date"] {
     appearance: none;
     border-radius: 10px;
     text-rendering: none;
-    box-shadow: 0 1px 6px rgb(0,0,0,0.4);
+    /* box-shadow: 0 1px 6px rgb(0,0,0,0.4); */
 }
 
 input[type=date]:focus {
@@ -30,12 +30,13 @@ input[type=date]:focus {
 
 input[type="date"]::-webkit-calendar-picker-indicator {
     background-color: var(--mediumgreen);
-    padding: 5px;
+    padding: 15px;
     border-radius: 5px;
+    box-shadow: 0 3px 3px rgb(0,0,0,0.4);
+    background-color: white;
 }
 
 input[type="date"]::-webkit-calendar-picker-indicator:hover {
-    transform: scale(1.2);
     background-color: var(--ultragreen);
     cursor: pointer;
 }

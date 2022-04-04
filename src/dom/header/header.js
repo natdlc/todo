@@ -8,7 +8,7 @@ const insertHeader = () => {
 const insertTitle = parent => {
     const title = document.createElement('h1');
     title.classList.add('title');
-    title.innerText = 'Lista';
+    title.innerText = 'Daily Routine';
     parent.appendChild(title);
 };
 

@@ -1,6 +1,5 @@
 .list-checkmark-checked, 
 .sublist-checkmark-checked {
-    border: 1px solid var(--ultragreen);
     color: var(--ultragreen);
 }
 

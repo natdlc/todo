@@ -6,7 +6,7 @@ module.exports = {
   devtool: 'inline-source-map',
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'Lista',
+      title: 'Daily Routine',
     }),
   ],
   output: {
