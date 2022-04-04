@@ -12,6 +12,7 @@
 .list-title-checked,
 .sublist-desc-checked,
 .sublist-time-checked,
-.sublist-duration-checked {
+.sublist-duration-checked, 
+.select-checked {
     text-decoration-line: line-through;
 }

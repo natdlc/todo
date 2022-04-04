@@ -1,5 +1,6 @@
-import {listDelBtnEvent} from '../../../features/del-sublist.js';
+import {sublistDelBtnEvent} from '../../../features/del-sublist.js';
 import {sublistCheckmarkEvent} from '../../../features/sublist-checkmark.js';
+import { onPrioSelect } from '../../../features/prio-indicator.js';
 
 const insertSublistWrapper = parent => {
     const sublistWrapper = document.createElement('div');
@@ -61,6 +62,8 @@ const insertPrioritySelection = parent => {
     option4.setAttribute('value', 'high');
     option4.innerText = 'High';
 
+    select.addEventListener('click', onPrioSelect);
+
     select.appendChild(option1);
     select.appendChild(option2);
     select.appendChild(option3);
@@ -72,7 +75,7 @@ const insertPrioritySelection = parent => {
 const insertDelBtn = parent => {
     const btn = document.createElement('button');
     btn.innerHTML = '&#10060;';
-    btn.addEventListener('click', listDelBtnEvent);
+    btn.addEventListener('click', sublistDelBtnEvent);
     parent.appendChild(btn);
 };
 

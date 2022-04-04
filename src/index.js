@@ -43,11 +43,11 @@ FEATURES
 
     Sublist priority indicator
         DOM 
-            add default option "Priority Level"
-            update display list prio indicator when medium / high is set on sublist
-            update select element bg color according to option value
-            update checkmark border color according to option value
-            when checkmark is checked, add linethrough and bg color easygreen priority
+            add default option "Priority Level" (complete)
+            display correct list prio indicator when medium / high is set on sublist (complete)
+            scan prio levels when a sublist is deleted and update indicator accordingly (complete)
+            update select element bg color according to option value (complete)
+            when checkmark is checked, add linethrough and bg color easygreen priority (complete)
         local
 
     Save lists as a template
@@ -61,9 +61,7 @@ FEATURES
 
 
 TO DO
-    ui
-        list hasPriority sublist indicator *
-        sublist priority
+    ui / ux
         display random motivation quotes
     
     backend
@@ -73,7 +71,7 @@ TO DO
 */
 
 class List {
-    constructor(title, hasPriority, checked) {
+    constructor(title, checked) {
         this.title = title;
         this.hasPriority = false;
         this.priority;

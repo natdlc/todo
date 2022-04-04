@@ -3,15 +3,17 @@ const sublistCheckmarkEvent = e => {
     const sublistDesc = e.path[1].children[1];
     const sublistTime = e.path[1].children[2];
     const sublistDuration = e.path[1].children[3];
-    domSublistChange(checkmark, sublistDesc, sublistTime, sublistDuration);
+    const prioLevel = e.path[1].children[4];
+    domSublistChange(checkmark, sublistDesc, sublistTime, sublistDuration, prioLevel);
     domSublistChangesList(e);
 };
 
-const domSublistChange = (checkmark,desc,time,duration) => {
+const domSublistChange = (checkmark,desc,time,duration,prio) => {
     checkmark.classList.toggle('sublist-checkmark-checked');
     desc.classList.toggle('sublist-desc-checked');
     time.classList.toggle('sublist-time-checked');
     duration.classList.toggle('sublist-duration-checked');
+    prio.classList.toggle('select-checked');
 };
 
 const domSublistChangesList = e => {
@@ -57,8 +59,9 @@ const isSublistChecked = sublist => {
     const descChecked = sublist.children[1].classList.contains('sublist-desc-checked');
     const timeChecked = sublist.children[2].classList.contains('sublist-time-checked');
     const durationChecked = sublist.children[3].classList.contains('sublist-duration-checked');
+    const prioChecked = sublist.children[4].classList.contains('select-checked');
 
-    if (checkmarkChecked && descChecked && timeChecked && durationChecked) return true;
+    if (checkmarkChecked && descChecked && timeChecked && durationChecked && prioChecked) return true;
 }
 
 

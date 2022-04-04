@@ -42,11 +42,12 @@ const toggleSublist = sublist => {
         const desc = sublist.children[1];
         const time = sublist.children[2];
         const duration = sublist.children[3];
-
+        const prio = sublist.children[4];
         checkmark.classList.toggle('sublist-checkmark-checked');
         desc.classList.toggle('sublist-desc-checked');
         time.classList.toggle('sublist-time-checked');
         duration.classList.toggle('sublist-duration-checked');
+        prio.classList.toggle('select-checked');
     }
 }
 

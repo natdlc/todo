@@ -39,7 +39,7 @@ const insertAddSublistBtn = parent => {
 const insertPriorityIndicator = parent => {
     const p = document.createElement('p');
     p.innerText = '!';
-    p.classList.add('medium-priority-indicator');
+    p.classList.add('priority-indicator');
     parent.appendChild(p);
 }
 
