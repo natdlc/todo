@@ -22,7 +22,7 @@ const domListChangesSublist = list => {
         sublistArray.forEach(sublist => {
             const checkmark = sublist.children[0];
             const checkmarkChecked = checkmark.classList.contains('sublist-checkmark-checked');
-            !checkmarkChecked ? toggleSublist(sublist) : false;
+            !checkmarkChecked ? toggleSublist(sublist) : 0;
         });
     }
 
@@ -30,7 +30,7 @@ const domListChangesSublist = list => {
         sublistArray.forEach(sublist => {
             const checkmark = sublist.children[0];
             const checkmarkChecked = checkmark.classList.contains('sublist-checkmark-checked');
-            checkmarkChecked ? toggleSublist(sublist) : false;
+            checkmarkChecked ? toggleSublist(sublist) : 0;
         });
     };
 }

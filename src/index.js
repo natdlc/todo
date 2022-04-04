@@ -16,6 +16,15 @@ import './styles/main/3-lists-checked.css';
 })();
 
 /*
+TO DO
+    ui / ux
+        display random motivation quotes
+    
+    backend
+        study local storage **
+        implement class logic with local storage
+        connect class logic with dom
+
 FEATURES
     Add/Del List
         DOM (complete)
@@ -57,17 +66,7 @@ FEATURES
     Contain lists according to dates
         DOM
         local
-    
 
-
-TO DO
-    ui / ux
-        display random motivation quotes
-    
-    backend
-        study local storage
-        implement class logic with local storage
-        connect class logic with dom
 */
 
 class List {
