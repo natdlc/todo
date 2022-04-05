@@ -4,15 +4,15 @@
     flex-direction: column;
     padding: 30px 60px 0 60px;
     height: 100%;
-    gap: 20px;
+    gap: 5px;
   }
   
   .sidebar-wrappers {
     display: flex;
     align-items: center;
     padding: 8px;
-    gap: 10px;
-    width: 150px;
+    gap: 15px;
+    width: 100%;
   }
 
   .sidebar-wrappers:hover {
@@ -27,12 +27,14 @@
 
   
   .add-list-btn {
+    margin-top: 15px;
     align-self: center;
     width: 110px;
     height: 38px;
     font-size: 16px;
     border-radius: 15px;
-    box-shadow: 0 1px 3px rgb(0,0,0,0.4)
+    box-shadow: 0 1px 3px rgb(0,0,0,0.4);
+    font-weight: 400;
   }
 
   .add-list-btn:hover {

@@ -12,7 +12,6 @@ import './styles/main/3-lists-checked.css';
     insertHeader();
     insertMain();
     addList();
-
 })();
 
 /*
@@ -57,6 +56,10 @@ FEATURES
             scan prio levels when a sublist is deleted and update indicator accordingly (complete)
             update select element bg color according to option value (complete)
             when checkmark is checked, add linethrough and bg color easygreen priority (complete)
+        local
+
+    Expandable/collapsible lists map in sidebar
+        DOM
         local
 
     Save lists as a template

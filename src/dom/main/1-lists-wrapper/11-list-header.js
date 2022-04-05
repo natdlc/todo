@@ -46,7 +46,7 @@ const insertPriorityIndicator = parent => {
 const insertDelBtn = parent => {
     const btn = document.createElement('button');
     btn.classList.add('del-list-btn');
-    btn.innerHTML = '&#10060;'
+    btn.innerHTML = '&#10006;'
     btn.addEventListener('click', listDelBtnEvent);
     parent.appendChild(btn);
 }

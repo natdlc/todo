@@ -74,7 +74,7 @@ const insertPrioritySelection = parent => {
 
 const insertDelBtn = parent => {
     const btn = document.createElement('button');
-    btn.innerHTML = '&#10060;';
+    btn.innerHTML = '&#10006;';
     btn.addEventListener('click', sublistDelBtnEvent);
     parent.appendChild(btn);
 };
