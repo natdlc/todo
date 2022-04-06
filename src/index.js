@@ -1,6 +1,6 @@
 import {insertHeader, insertMain} from './dom/dom.js';
 import {addListBtn} from './features/add-list.js';
-import { insertList } from './dom/main/1-lists-wrapper/10-list.js';
+
 import './styles/0-reset.css';
 import './styles/0-style.css';
 import './styles/header/header.css';
@@ -95,11 +95,8 @@ class Sublist {
     }
 }
 
-//get value of dates
-(() => {
-    const dateInp = document.querySelector('input[type="date"]');
-    //set item in localstorage with date as key
-    dateInp.addEventListener('change', e => {
-        // localStorage.setItem(e.target.value, {})
-    });
-})();
+/*
+
+when user clicks on add list, add it to a lists object
+
+*/

@@ -1,3 +1,5 @@
+import { onDateChange } from "../../features/date-input";
+
 const insertHeader = () => {
     const header = document.createElement('header');
     insertTitle(header);
@@ -15,6 +17,7 @@ const insertTitle = parent => {
 const insertDate = parent => {
     const date = document.createElement('input');
     date.setAttribute('type', 'date');
+    date.addEventListener('change', onDateChange)
     parent.appendChild(date);
 };
 
