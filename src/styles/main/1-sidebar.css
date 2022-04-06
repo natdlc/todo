@@ -2,9 +2,10 @@
 .sidebar {
     display: flex;
     flex-direction: column;
-    padding: 30px 60px 0 60px;
+    /* padding: 10px; */
     height: 100%;
     gap: 5px;
+    margin-top: 10px;
   }
   
   .sidebar-wrappers {
@@ -12,7 +13,7 @@
     align-items: center;
     padding: 8px;
     gap: 15px;
-    width: 100%;
+    margin: 0 20px;
   }
 
   .sidebar-wrappers:hover {
@@ -27,13 +28,17 @@
 
   
   .add-list-btn {
-    margin-top: 15px;
     align-self: center;
-    width: 110px;
+    width: 100%;
     height: 38px;
     font-size: 16px;
-    border-radius: 15px;
-    box-shadow: 0 1px 3px rgb(0,0,0,0.4);
+    border-radius: 0;
+    box-shadow: none;
+    border-top: 1px solid lightgray;
+    border-bottom: 1px solid lightgray;
+    padding: 20px 0;
+    /* border-radius: 15px; */
+    /* box-shadow: 0 1px 3px rgb(0,0,0,0.4); */
     font-weight: 400;
   }
 

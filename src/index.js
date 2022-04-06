@@ -1,5 +1,6 @@
 import {insertHeader, insertMain} from './dom/dom.js';
-import {addList} from './features/add-list.js';
+import {addListBtn} from './features/add-list.js';
+import { insertList } from './dom/main/1-lists-wrapper/10-list.js';
 import './styles/0-reset.css';
 import './styles/0-style.css';
 import './styles/header/header.css';
@@ -9,9 +10,11 @@ import './styles/main/2-lists.css';
 import './styles/main/3-lists-checked.css';
 
 (function (){
+    //insert content structure
     insertHeader();
     insertMain();
-    addList();
+    
+    addListBtn();
 })();
 
 /*
@@ -95,5 +98,8 @@ class Sublist {
 //get value of dates
 (() => {
     const dateInp = document.querySelector('input[type="date"]');
-    console.dir(dateInp);
+    //set item in localstorage with date as key
+    dateInp.addEventListener('change', e => {
+        // localStorage.setItem(e.target.value, {})
+    });
 })();

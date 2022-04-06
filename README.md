@@ -21,7 +21,7 @@ local storage
               duration (string)
               priority (string)
               checked (bool)
-          
+
   update local storage when user clicks on the ff elements
 
     checkmark (list header)
