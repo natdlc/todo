@@ -72,41 +72,28 @@ FEATURES
 
 */
 
+//create classes for list and sublist
+
 class List {
-    constructor(title, checked) {
+    constructor (title) {
+        this.checked = false;
         this.title = title;
         this.hasPriority = false;
-        this.priority;
-        this.checked = checked;
-    };
-
-    sublists = [];
-
-    addSublist (desc, time, duration, priority) {
-        const sublist = new Sublist(desc, time, duration, priority);
-        if (priority === 'high') this.hasHighPriority = true;
-        this.sublists.push(sublist);
-    };
-};
+    }
+}
 
 class Sublist {
-    constructor(desc, time, duration, priority) {
-        this.desc = desc;
+    constructor (title, time, duration, prio) {
+        this.checked = false;
+        this.title = title;
         this.time = time;
         this.duration = duration;
-        this.priority = priority
-        this.checked = false;
-    };
-
-    setPriority (newPriority) {
-        this.priority = newPriority;
+        this.prio = prio;
     }
-};
+}
 
-// let list1 = new List('read', 'false', 'low');
-// list1.addSublist('jp', '3pm', '30 minutes', 'low');
-// list1.addSublist('test', '5', '10m', 'high');
-// list1.sublists.forEach(sublist => {
-//     console.log(sublist.priority);
-// })
-// console.log(list1);
+//get value of dates
+(() => {
+    const dateInp = document.querySelector('input[type="date"]');
+    console.dir(dateInp);
+})();
