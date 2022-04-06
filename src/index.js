@@ -13,9 +13,13 @@ import './styles/main/3-lists-checked.css';
     //insert content structure
     insertHeader();
     insertMain();
-    
     addListBtn();
 })();
+
+//localStorage.getItem()
+//localStorage.setItem()
+//JSON.stringify()
+//JSON.parse()
 
 /*
 TO DO
@@ -76,24 +80,6 @@ FEATURES
 */
 
 //create classes for list and sublist
-
-class List {
-    constructor (title) {
-        this.checked = false;
-        this.title = title;
-        this.hasPriority = false;
-    }
-}
-
-class Sublist {
-    constructor (title, time, duration, prio) {
-        this.checked = false;
-        this.title = title;
-        this.time = time;
-        this.duration = duration;
-        this.prio = prio;
-    }
-}
 
 /*
 
