@@ -21,7 +21,7 @@ const addListBtn = () => {
 
 const addListToStorage = () => {
     const date = document.querySelector('input[type=date]');
-    const newList = new List('');
+    const newList = new List('test');
     const listsArray = JSON.parse(localStorage.getItem(date.value));
     listsArray.push(newList);
     localStorage.setItem(date.value, JSON.stringify(listsArray));

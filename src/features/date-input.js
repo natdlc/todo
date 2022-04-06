@@ -13,6 +13,11 @@ const onDateChange = e => {
 
     const listsArr = JSON.parse(localStorage.getItem(dateSelected));
 
+    setListTitles(listsArr, dateSelected);
+
+}
+
+const setListTitles = (listsArr, dateSelected) => {
     for (let i = 0; i < listsArr.length; i++) {
         const listsWrapper = document.querySelector('.lists-wrapper');
         //insert list to dom
@@ -35,5 +40,7 @@ const onDateChange = e => {
         listTitle.innerText = currentList.title;
     }
 }
+
+
 
 export {onDateChange};
