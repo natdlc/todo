@@ -1,9 +1,8 @@
 import {insertList} from '../dom/main/1-lists-wrapper/10-list.js';
 import {updateStorage} from './edit-list.js';
-//create container for list objects
-//when user clicks add list
-    //create new list object
-    //push new list object to container
+
+//BUG: Add list does not have a link to local storage
+//BUG: list titles added from addlistbtn does not have a link to local storage
 
 class List {
     constructor(title) {
