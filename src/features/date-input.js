@@ -15,6 +15,7 @@ const onDateChange = e => {
     const listsArr = JSON.parse(localStorage.getItem(dateSelected));
 
     setListTitles(listsArr, dateSelected);
+    console.log(localStorage);
 }
 
 const setListTitles = (listsArr, dateSelected) => {
@@ -38,12 +39,21 @@ const setListTitles = (listsArr, dateSelected) => {
         
         //set individual list's title text to the one from localstorage
         listTitle.innerText = currentList.title;
+
+        listTitle.addEventListener('input', e => {updateStorage(i, dateSelected, e)})
     }
 }
 
 const removeCurrentLists = () => {
     const lists = document.querySelectorAll('.list');
     lists.forEach(list => list.remove());
+}
+
+const updateStorage = (i, dateSelected, e) => {
+    const listsArray = JSON.parse(localStorage.getItem(dateSelected));
+    listsArray[i].title = e.target.innerText;
+    localStorage.setItem(dateSelected, JSON.stringify(listsArray));
+    console.log(localStorage);
 }
 
 export {onDateChange};
