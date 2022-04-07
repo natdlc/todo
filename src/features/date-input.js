@@ -2,7 +2,8 @@ import { insertList } from "../dom/main/1-lists-wrapper/10-list";
 
 const onDateChange = e => {
     const dateSelected = e.target.value;
-    
+    //remove display from previous date
+    removeCurrentLists();
     //if storage doesnt have a value for the date yet
         //set date selected as key and initialize 
     if (!localStorage.getItem(dateSelected)) {
@@ -14,7 +15,6 @@ const onDateChange = e => {
     const listsArr = JSON.parse(localStorage.getItem(dateSelected));
 
     setListTitles(listsArr, dateSelected);
-
 }
 
 const setListTitles = (listsArr, dateSelected) => {
@@ -41,6 +41,9 @@ const setListTitles = (listsArr, dateSelected) => {
     }
 }
 
-
+const removeCurrentLists = () => {
+    const lists = document.querySelectorAll('.list');
+    lists.forEach(list => list.remove());
+}
 
 export {onDateChange};
