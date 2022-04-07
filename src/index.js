@@ -16,6 +16,9 @@ import './styles/main/3-lists-checked.css';
     addListBtn();
 })();
 
+// *** Bug with Priority Indicator
+    // indicator only updates on the first list even when prio is changed on a different list
+
 //localStorage.getItem()
 //localStorage.setItem()
 //JSON.stringify()
