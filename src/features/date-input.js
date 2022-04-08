@@ -6,12 +6,9 @@ const onDateChange = e => {
     if (!localStorage.getItem(dateSelected)) {
         const listsArray = [];
         localStorage.setItem(dateSelected, JSON.stringify(listsArray));
-        console.log('populate storage');
     }
-
     const listsArr = JSON.parse(localStorage.getItem(dateSelected));
     setListTitles(listsArr, dateSelected);
-    console.log(localStorage);
 }
 
 const removeCurrentLists = () => {

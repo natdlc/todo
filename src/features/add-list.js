@@ -9,16 +9,14 @@ class List {
 const addListBtn = () => {
     const btn = document.querySelector('.add-list-btn');
     const listsWrapper = document.querySelector('.lists-wrapper');
+
     btn.addEventListener('click', e => {
+
         insertList(listsWrapper);
         addListToStorage();
 
         const dateSelected = document.querySelector('input[type=date]').value;
         const listsArr = JSON.parse(localStorage.getItem(dateSelected));
-
-        // loop through all list items
-        // attach event listener to each h1
-        // use iterator to connect and update h1 content against storage array
 
         const listsDom = e.path[2].children[1].children;
 
@@ -29,8 +27,6 @@ const addListBtn = () => {
             titleDom.addEventListener('input', e => {
                 listsArr[i].title = e.target.innerText;
                 localStorage.setItem(dateSelected, JSON.stringify(listsArr));
-                console.log(listsArr);
-                console.log(localStorage);
             });
         }
     });
