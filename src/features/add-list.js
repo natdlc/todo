@@ -1,5 +1,4 @@
 import {insertList} from '../dom/main/1-lists-wrapper/10-list.js';
-import { setListTitles } from './edit-list.js';
 
 class List {
     constructor(title) {
@@ -16,10 +15,24 @@ const addListBtn = () => {
 
         const dateSelected = document.querySelector('input[type=date]').value;
         const listsArr = JSON.parse(localStorage.getItem(dateSelected));
+
         // loop through all list items
         // attach event listener to each h1
         // use iterator to connect and update h1 content against storage array
-        console.log(e.path[2].children[1].children);
+
+        const listsDom = e.path[2].children[1].children;
+
+        for (let i = 0; i < listsDom.length; i++) {
+            const listDom = listsDom[i];
+            const titleDom = listDom.children[0].children[1];
+
+            titleDom.addEventListener('input', e => {
+                listsArr[i].title = e.target.innerText;
+                localStorage.setItem(dateSelected, JSON.stringify(listsArr));
+                console.log(listsArr);
+                console.log(localStorage);
+            });
+        }
     });
 }
 

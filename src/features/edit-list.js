@@ -17,7 +17,7 @@ const setListTitles = (listsArr, dateSelected) => {
         
         listTitle.innerText = currentList.title;
 
-        listTitle.addEventListener('input', e => {updateStorage(i, dateSelected, e)})
+        listTitle.addEventListener('input', e => {updateStorage(i, dateSelected, e)});
     }
 }
 
