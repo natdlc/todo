@@ -38,7 +38,6 @@ const addListToStorage = () => {
     const listsArray = JSON.parse(localStorage.getItem(date.value));
     listsArray.push(newList);
     localStorage.setItem(date.value, JSON.stringify(listsArray));
-    console.log(localStorage);
 }
 
 export {addListBtn};
