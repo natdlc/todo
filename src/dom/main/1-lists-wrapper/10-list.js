@@ -5,7 +5,7 @@ const insertList = parent => {
     const list = document.createElement('div');
     list.classList.add('list');
     insertListHeader(list);
-    insertSublistWrapper(list);
+    // insertSublistWrapper(list);
     parent.appendChild(list);
 };
 
