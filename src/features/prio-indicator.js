@@ -1,5 +1,5 @@
 const onPrioSelect = e => {
-    const prioIndicator = document.querySelector('.priority-indicator')
+    const prioIndicator = e.path[2].children[0].children[3];
     
     if (e.target.value == 'medium') {
         checkOtherSublists(e, prioIndicator);
