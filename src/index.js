@@ -10,7 +10,6 @@ import './styles/main/2-lists.css';
 import './styles/main/3-lists-checked.css';
 
 (function (){
-    //insert content structure
     insertHeader();
     insertMain();
     addListBtn();
@@ -19,19 +18,17 @@ import './styles/main/3-lists-checked.css';
 // *** Bug with Priority Indicator
     // indicator only updates on the first list even when prio is changed on a different list
 
-//localStorage.getItem()
-//localStorage.setItem()
-//JSON.stringify()
-//JSON.parse()
-
 /*
 TO DO
     ui / ux
         display random motivation quotes
     
     backend
-        study local storage **
-        implement class logic with local storage
+        study local storage (complete))
+        implement class logic with local storage **
+            add sublist to storage **
+            edit sublist when content is edited
+                desc, time, duration, prio
         connect class logic with dom
 
 FEATURES
