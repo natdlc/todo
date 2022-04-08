@@ -2,15 +2,19 @@ import {insertSublistWrapper} from '../dom/main/1-lists-wrapper/12-sublist.js';
 import {toggleListHeader} from '../features/sublist-checkmark.js';
 
 class Sublist {
-    constructor(checked, title, time, duration, prio) {
+    constructor(checked, desc, time, duration, prio) {
         this.checked = checked;
-        this.title = title;
+        this.desc = desc;
         this.time = time;
         this.duration = duration;
         this.prio = prio;
     }
 }
 
+//bug with add sublist:
+    //after sublist is added
+        //when list title is edited
+            //sublist array from storage gets removed
 const addSublistBtnEvent = e => {
     const parentList = e.path[2];
     const listHeader = e.path[1];
@@ -28,7 +32,7 @@ const addToStorage = (e, parentList) => {
     const node = parentList.parentNode.childNodes;
     const listIndex = Array.from(node).indexOf(parentList);
   
-    if (!listsArray[listIndex].hasOwnProperty('sublists')) listsArray[listIndex].sublists = [];
+    if (!(listsArray[listIndex].hasOwnProperty('sublists'))) listsArray[listIndex].sublists = [];
 
     listsArray[listIndex].sublists.push(new Sublist(false, '', '', '', ''));
     localStorage.setItem(currentDate, JSON.stringify(listsArray));

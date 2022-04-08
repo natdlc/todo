@@ -11,7 +11,6 @@ const setListTitles = (listsArr, dateSelected) => {
         const listTitle = listDom.children[0].children[1];
 
         listTitle.innerText = currentList.title;
-        listTitle.addEventListener('input', e => {updateStorage(i, dateSelected, e, listsArr)});
         
         if (currentList.hasOwnProperty('sublists')) {
             for (let j = 0; j < currentList.sublists.length; j++) {
@@ -19,10 +18,13 @@ const setListTitles = (listsArr, dateSelected) => {
             }
         }
 
+        listTitle.addEventListener('input', e => {updateStorage(i, dateSelected, e)});
+
     }
 }
 
-const updateStorage = (i, dateSelected, e, listsArr) => {
+const updateStorage = (i, dateSelected, e) => {
+    const listsArr = JSON.parse(localStorage.getItem(dateSelected));
     listsArr[i].title = e.target.innerText;
     localStorage.setItem(dateSelected, JSON.stringify(listsArr));
     
