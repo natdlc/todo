@@ -9,6 +9,7 @@ const onDateChange = e => {
     }
     const listsArr = JSON.parse(localStorage.getItem(dateSelected));
     setListTitles(listsArr, dateSelected);
+    
 }
 
 const removeCurrentLists = () => {
