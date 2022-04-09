@@ -26,6 +26,8 @@ const sublistDelBtnEvent = e => {
     console.log(listStorage);
 
     //remove from storage (INCOMPLETE)
+        //add edit sublist functionality first
+    // listStorage.sublists.splice(sublistIndex-1, 1);
     console.log(listStorage.sublists);
 };
 
