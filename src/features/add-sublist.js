@@ -1,5 +1,6 @@
 import {insertSublistWrapper} from '../dom/main/1-lists-wrapper/12-sublist.js';
 import {toggleListHeader} from '../features/sublist-checkmark.js';
+import {updateStorage} from '../features/edit-sublist.js';
 
 class Sublist {
     constructor(checked, desc, time, duration, prio) {
@@ -26,22 +27,8 @@ const addSublistBtnEvent = e => {
 
     //edit sublist desc functionality
     const listChildNodes = parentList.childNodes;
-    console.log(listChildNodes);
-    for (let i = 0; i < listChildNodes.length; i++) {
-        if (listChildNodes[i].classList.contains('sublist-wrapper')) {
-            const sublist = listChildNodes[i];
-            const sublistDesc = sublist.childNodes[1];
-            
-            sublistDesc.addEventListener('input', e => {
-                const listsArr = JSON.parse(localStorage.getItem(dateSelected));
-                const listIndex = listsWrapper.indexOf(parentList);
-                const sublistIndex = i-1;
-                listsArr[listIndex].sublists[sublistIndex].desc = e.target.innerText;
-                localStorage.setItem(dateSelected, JSON.stringify(listsArr));
-                console.log(JSON.parse(localStorage.getItem(dateSelected)));
-            })
-        }
-    }
+    updateStorage(listsWrapper, listChildNodes, dateSelected, parentList)
+
 };
 
 const addToStorage = (e, parentList) => {
