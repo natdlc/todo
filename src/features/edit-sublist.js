@@ -8,7 +8,6 @@ const editSublistDesc = (sublist, dateSelected, i, j) => {
         listsArr[i].sublists[j].desc = domDesc;
         localStorage.setItem(dateSelected, JSON.stringify(listsArr));
         console.log(JSON.parse(localStorage.getItem(dateSelected)));
-
     })
 }
 

@@ -1,10 +1,5 @@
 import {insertList} from '../dom/main/1-lists-wrapper/10-list.js';
 
-//BUG with add list
-    //if list is added from addlist btn
-        //when sublist is added from added list
-            //when list title is edited
-                //added sublists are removed from storage(MUST NOT)
 class List {
     constructor(title) {
         this.title = title;

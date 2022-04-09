@@ -16,10 +16,32 @@ const addSublistBtnEvent = e => {
     const listHeader = e.path[1];
     const listHeaderCheckmark = e.path[1].children[0];
     const listHeaderChecked = listHeaderCheckmark.classList.contains('list-checkmark-checked');
+    const dateSelected = document.querySelector('input[type=date]').value;
 
     if (listHeaderChecked) {toggleListHeader(listHeader);}
     insertSublistWrapper(parentList);
     addToStorage(e, parentList);
+
+    const listsWrapper = Array.from(parentList.parentElement.childNodes);
+
+    //edit sublist desc functionality
+    const listChildNodes = parentList.childNodes;
+    console.log(listChildNodes);
+    for (let i = 0; i < listChildNodes.length; i++) {
+        if (listChildNodes[i].classList.contains('sublist-wrapper')) {
+            const sublist = listChildNodes[i];
+            const sublistDesc = sublist.childNodes[1];
+            
+            sublistDesc.addEventListener('input', e => {
+                const listsArr = JSON.parse(localStorage.getItem(dateSelected));
+                const listIndex = listsWrapper.indexOf(parentList);
+                const sublistIndex = i-1;
+                listsArr[listIndex].sublists[sublistIndex].desc = e.target.innerText;
+                localStorage.setItem(dateSelected, JSON.stringify(listsArr));
+                console.log(JSON.parse(localStorage.getItem(dateSelected)));
+            })
+        }
+    }
 };
 
 const addToStorage = (e, parentList) => {
