@@ -25,10 +25,13 @@ const sublistDelBtnEvent = e => {
     console.log(listDom);
     console.log(listStorage);
 
-    //remove from storage (INCOMPLETE)
-        //add edit sublist functionality first
-    // listStorage.sublists.splice(sublistIndex-1, 1);
-    console.log(listStorage.sublists);
+    //remove from storage (COMPLETE)
+        //add edit sublist functionality first (COMPLETE from edit-sublist.js)
+    listStorage.sublists.splice(sublistIndex-1, 1);
+    localStorage.setItem(dateSelected, JSON.stringify(storageListArray));
+    clickedSublist.remove();
+    console.log(JSON.parse(localStorage.getItem(dateSelected)));
+
 };
 
 export {sublistDelBtnEvent};

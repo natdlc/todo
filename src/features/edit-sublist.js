@@ -8,7 +8,21 @@ const editSublistDesc = (sublist, dateSelected, i, j) => {
         listsArr[i].sublists[j].desc = domDesc;
         localStorage.setItem(dateSelected, JSON.stringify(listsArr));
         console.log(JSON.parse(localStorage.getItem(dateSelected)));
+
     })
 }
 
-export {editSublistDesc};
+const updateSublistInnerTexts = (sublist, dateSelected, i, j) => {
+    //get sublist desc dom element
+    const sublistDesc = sublist.children[1];
+    console.log(sublistDesc.innerText);
+
+    //get sublist desc from storage
+    const listsArr = JSON.parse(localStorage.getItem(dateSelected))
+    console.log(listsArr[i].sublists[j]);
+
+    //update dom innertext with values from storage
+    sublistDesc.innerText = listsArr[i].sublists[j].desc;
+}
+
+export {editSublistDesc, updateSublistInnerTexts };

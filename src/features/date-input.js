@@ -9,6 +9,7 @@ const onDateChange = e => {
     }
     const listsArr = JSON.parse(localStorage.getItem(dateSelected));
     setListTitles(listsArr, dateSelected);
+    //get sublist desc value from storage and display it inside respective lists
 }
 
 const removeCurrentLists = () => {

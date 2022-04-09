@@ -1,6 +1,6 @@
 import { insertList } from "../dom/main/1-lists-wrapper/10-list";
 import { insertSublistWrapper } from '../dom/main/1-lists-wrapper/12-sublist.js';
-import { editSublistDesc } from "./edit-sublist";
+import { editSublistDesc, updateSublistInnerTexts } from "./edit-sublist";
 
 const setListTitles = (listsArr, dateSelected) => {
     for (let i = 0; i < listsArr.length; i++) {
@@ -23,9 +23,14 @@ const setListTitles = (listsArr, dateSelected) => {
                 // get sublist
                 insertSublistWrapper(listDom);
                 const sublist = listDom.childNodes[j+1];
+
                 // add event listener for each sublist
                 // sublist description
                 editSublistDesc(sublist, dateSelected, i, j)
+                // editSublistTime()
+                // editSublistDuration()
+                // editSublistPrio()
+                updateSublistInnerTexts(sublist, dateSelected, i, j);
             }
         }
 

@@ -11,10 +11,6 @@ class Sublist {
     }
 }
 
-//bug with add sublist:
-    //after sublist is added
-        //when list title is edited
-            //sublist array from storage gets removed
 const addSublistBtnEvent = e => {
     const parentList = e.path[2];
     const listHeader = e.path[1];
