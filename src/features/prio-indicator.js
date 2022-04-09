@@ -1,6 +1,5 @@
 const onPrioSelect = e => {
     const prioIndicator = e.path[2].childNodes[0].childNodes[3];
-    const prioSelected = e.target.value;
     const listNodes = e.path[2].childNodes;
     const listPriorities = [];
     for (let i = 0; i < listNodes.length; i++) {
@@ -12,7 +11,6 @@ const onPrioSelect = e => {
             listPriorities.push(prioValue);
         }
     }
-
     updateStorage(e);
     updatePrioIndicatorDom(listPriorities, prioIndicator);
 }

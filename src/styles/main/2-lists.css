@@ -50,7 +50,6 @@
 .list-title[contenteditable] {
   cursor: pointer;
   padding: 10px;
-  color: black;
 }
 
 .list-title[contenteditable]:focus {

@@ -2,6 +2,7 @@ import {insertList} from '../dom/main/1-lists-wrapper/10-list.js';
 
 class List {
     constructor(title) {
+        this.checked = false;
         this.title = title;
     }
 }

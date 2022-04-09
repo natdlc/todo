@@ -5,6 +5,7 @@ import {
     updateSublistInnerTexts, 
     updateSublistPrioValues, 
     updatePrioIndicator } from "./edit-sublist";
+import { updateCheckedStatus } from "./list-checkmark";
 
 const setListTitles = (listsArr, dateSelected) => {
     for (let i = 0; i < listsArr.length; i++) {
@@ -17,11 +18,6 @@ const setListTitles = (listsArr, dateSelected) => {
         
         listTitle.innerText = currentList.title;
         
-        //if list contains sublist from storage
-            // add it to dom
-            // add edit functionality
-                // if sublist desc / time / duration / prio innertext changes...
-                    // update from storage
         if (currentList.hasOwnProperty('sublists')) {
             for (let j = 0; j < currentList.sublists.length; j++) {
                 // get sublist
@@ -38,7 +34,7 @@ const setListTitles = (listsArr, dateSelected) => {
                 updateSublistPrioValues(sublist, dateSelected, i, j);
             }
         }
-
+        updateCheckedStatus(currentList, listDom);
         updatePrioIndicator(listDom);
 
         listTitle.addEventListener('input', e => {updateStorage(i, dateSelected, e)});

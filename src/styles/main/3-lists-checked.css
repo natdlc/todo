@@ -9,10 +9,17 @@
     color: var(--easygreen);
 }
 
+.list-checkmark-checked:active,
+.sublist-checkmark-checked:active {
+    background-color: black;
+    color: var(--easygreen);
+}
+
 .list-title-checked,
 .sublist-desc-checked,
 .sublist-time-checked,
 .sublist-duration-checked, 
 .select-checked {
     text-decoration-line: line-through;
+    color: gray;
 }

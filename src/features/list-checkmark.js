@@ -1,10 +1,25 @@
 const listCheckmarkEvent = e => {
     const checkmark = e.target;
     const listTitle = e.path[1].children[1];
-    const list = e.path[2].children
+    const listHTMLCollection = e.path[2].children;
     domListChange(checkmark, listTitle);
-    domListChangesSublist(list);
+    domListChangesSublist(listHTMLCollection);
+    updateStorage(e);
 };
+
+const updateStorage = e => {
+    const dateSelected = document.querySelector('input[type=date]').value;    
+    const listsArr = JSON.parse(localStorage.getItem(dateSelected));
+
+    const listsWrapperNodes = Array.from(e.path[3].childNodes);
+    const list = e.path[2];
+    const listIndex = listsWrapperNodes.indexOf(list);
+
+    if (listsArr[listIndex].checked) {listsArr[listIndex].checked = false;}
+    else {listsArr[listIndex].checked = true;};
+
+    localStorage.setItem(dateSelected, JSON.stringify(listsArr));
+}
 
 const domListChange = (checkmark, listTitle) => {
     checkmark.classList.toggle('list-checkmark-checked');
@@ -38,17 +53,40 @@ const domListChangesSublist = list => {
 const toggleSublist = sublist => {
     if (sublist.classList.contains('sublist-wrapper')) {
 
-        const checkmark = sublist.children[0];
-        const desc = sublist.children[1];
-        const time = sublist.children[2];
-        const duration = sublist.children[3];
-        const prio = sublist.children[4];
-        checkmark.classList.toggle('sublist-checkmark-checked');
-        desc.classList.toggle('sublist-desc-checked');
-        time.classList.toggle('sublist-time-checked');
-        duration.classList.toggle('sublist-duration-checked');
-        prio.classList.toggle('select-checked');
+        toggleSublistLogic(sublist);
     }
 }
 
-export {listCheckmarkEvent};
+// from edit-list.js
+const updateCheckedStatus = (currentList, listDom) => {
+    const listCheckmark = listDom.childNodes[0].childNodes[0];
+    
+    const listTitle = listDom.childNodes[0].childNodes[1];
+    const listNodes = listDom.childNodes;
+
+    if (currentList.checked) {
+        listCheckmark.classList.toggle('list-checkmark-checked');
+        listTitle.classList.toggle('list-title-checked');
+        listNodes.forEach(node => {
+            if (node.classList.contains('sublist-wrapper')) {
+                const sublist = node;
+                toggleSublistLogic(sublist);
+            }
+        }) 
+    }
+}
+
+const toggleSublistLogic = sublist => {
+    const checkmark = sublist.children[0];
+    const desc = sublist.children[1];
+    const time = sublist.children[2];
+    const duration = sublist.children[3];
+    const prio = sublist.children[4];
+    checkmark.classList.toggle('sublist-checkmark-checked');
+    desc.classList.toggle('sublist-desc-checked');
+    time.classList.toggle('sublist-time-checked');
+    duration.classList.toggle('sublist-duration-checked');
+    prio.classList.toggle('select-checked');
+}
+
+export {listCheckmarkEvent, updateCheckedStatus};
