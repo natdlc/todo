@@ -62,7 +62,7 @@ const insertPrioritySelection = parent => {
     option4.setAttribute('value', 'high');
     option4.innerText = 'High';
 
-    select.addEventListener('click', onPrioSelect);
+    select.addEventListener('change', onPrioSelect);
 
     select.appendChild(option1);
     select.appendChild(option2);

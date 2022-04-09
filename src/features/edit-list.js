@@ -1,6 +1,10 @@
 import { insertList } from "../dom/main/1-lists-wrapper/10-list";
 import { insertSublistWrapper } from '../dom/main/1-lists-wrapper/12-sublist.js';
-import { editSublistDesc, updateSublistInnerTexts } from "./edit-sublist";
+import { 
+    editSublistDesc, 
+    updateSublistInnerTexts, 
+    updateSublistPrioValues, 
+    updatePrioIndicator } from "./edit-sublist";
 
 const setListTitles = (listsArr, dateSelected) => {
     for (let i = 0; i < listsArr.length; i++) {
@@ -31,8 +35,11 @@ const setListTitles = (listsArr, dateSelected) => {
                 // editSublistDuration()
                 // editSublistPrio()
                 updateSublistInnerTexts(sublist, dateSelected, i, j);
+                updateSublistPrioValues(sublist, dateSelected, i, j);
             }
         }
+
+        updatePrioIndicator(listDom);
 
         listTitle.addEventListener('input', e => {updateStorage(i, dateSelected, e)});
     }

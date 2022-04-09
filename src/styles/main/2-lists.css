@@ -94,11 +94,13 @@
 }
 
 .high-priority-indicator {
-  color: var(--lightred);
+  background-color: var(--lightred);
+  color: black;
 }
 
 .medium-priority-indicator {
-  color: var(--lightyellow);
+  background-color: var(--lightyellow);
+  color: black;
 }
 
 .del-list-btn {

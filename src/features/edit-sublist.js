@@ -1,27 +1,47 @@
+import { 
+    updatePrioIndicatorDom,
+    updatePrioLevelDom } from "./prio-indicator";
 const editSublistDesc = (sublist, dateSelected, i, j) => {
     const sublistDesc = sublist.childNodes[1];
 
     sublistDesc.addEventListener('input', e => {
-        //update sublist from storage
         const domDesc = e.target.innerText;
         const listsArr = JSON.parse(localStorage.getItem(dateSelected));
         listsArr[i].sublists[j].desc = domDesc;
         localStorage.setItem(dateSelected, JSON.stringify(listsArr));
-        console.log(JSON.parse(localStorage.getItem(dateSelected)));
     })
 }
 
 const updateSublistInnerTexts = (sublist, dateSelected, i, j) => {
-    //get sublist desc dom element
     const sublistDesc = sublist.children[1];
-    console.log(sublistDesc.innerText);
-
-    //get sublist desc from storage
     const listsArr = JSON.parse(localStorage.getItem(dateSelected))
-    console.log(listsArr[i].sublists[j]);
-
-    //update dom innertext with values from storage
     sublistDesc.innerText = listsArr[i].sublists[j].desc;
+}
+
+const updateSublistPrioValues = (sublist, dateSelected, i, j) => {
+    const sublistPrio = sublist.children[4];
+    const listsArr = JSON.parse(localStorage.getItem(dateSelected))
+    if (listsArr[i].sublists[j].prio == '') {
+        sublistPrio.value = 'default';
+        return;
+    }
+    sublistPrio.value = listsArr[i].sublists[j].prio;
+}
+
+const updatePrioIndicator = (listDom) => {
+    const prioIndicator = listDom.childNodes[0].childNodes[3];
+    const listPriorities = [];
+    const listDomNodes = listDom.childNodes;
+    listDomNodes.forEach(node => {
+        if (node.classList.contains('sublist-wrapper')) {
+            const sublist = node;
+            const prioElement = sublist.childNodes[4];
+            const prioValue = prioElement.value;
+            listPriorities.push(prioValue);
+            updatePrioLevelDom(prioValue, prioElement);
+        }
+        updatePrioIndicatorDom(listPriorities, prioIndicator);
+    })
 }
 
 // !!!! for add-sublist.js *** !!!
@@ -44,7 +64,13 @@ const updateStorageEvent = (i, e, listsWrapper, dateSelected, parentList) => {
     const sublistIndex = i-1;
     listsArr[listIndex].sublists[sublistIndex].desc = e.target.innerText;
     localStorage.setItem(dateSelected, JSON.stringify(listsArr));
-    console.log(JSON.parse(localStorage.getItem(dateSelected)));
 }
 
-export {editSublistDesc, updateSublistInnerTexts, updateStorage };
+
+
+export {
+    editSublistDesc, 
+    updateSublistInnerTexts, 
+    updateStorage, 
+    updateSublistPrioValues,
+    updatePrioIndicator };
