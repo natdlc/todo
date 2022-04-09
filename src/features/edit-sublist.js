@@ -24,21 +24,21 @@ const updateSublistInnerTexts = (sublist, dateSelected, i, j) => {
     sublistDesc.innerText = listsArr[i].sublists[j].desc;
 }
 
-const forAddSublistBtn = (listsWrapper, listChildNodes, dateSelected, parentList) => {
+// !!!! for add-sublist.js *** !!!
+const updateStorage = (listsWrapper, listChildNodes, dateSelected, parentList) => {
     for (let i = 0; i < listChildNodes.length; i++) {
         if (listChildNodes[i].classList.contains('sublist-wrapper')) {
             const sublist = listChildNodes[i];
             const sublistDesc = sublist.childNodes[1];
             
             sublistDesc.addEventListener('input', e => {
-                forAddSublistBtnListener(i, e, listsWrapper, dateSelected, parentList)
+                updateStorageEvent(i, e, listsWrapper, dateSelected, parentList)
             });
         }
     }
 }
-
 // !!!! for add-sublist.js *** !!!
-const updateStorage = (i, e, listsWrapper, dateSelected, parentList) => {
+const updateStorageEvent = (i, e, listsWrapper, dateSelected, parentList) => {
     const listsArr = JSON.parse(localStorage.getItem(dateSelected));
     const listIndex = listsWrapper.indexOf(parentList);
     const sublistIndex = i-1;
