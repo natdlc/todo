@@ -27,12 +27,10 @@ TO DO
         display random motivation quotes
     
     backend
-        study local storage (complete))
-        implement class logic with local storage **
-            add sublist to storage **
-            edit sublist when content is edited
-                desc, time, duration, prio
-        connect class logic with dom
+        ** SUBLIST checked status
+            must update on date change
+            must update when list is from addbtn
+                and when sublist is from add sublist btn
 
 FEATURES
     Add/Del List
