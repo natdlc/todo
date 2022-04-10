@@ -29,7 +29,6 @@ const setListTitles = (listsArr, dateSelected) => {
                 editSublistDesc(sublist, dateSelected, i, j)
                 // editSublistTime()
                 // editSublistDuration()
-                // editSublistPrio()
                 updateSublistCheckedStatus(sublist, dateSelected, i, j);
                 updateSublistInnerTexts(sublist, dateSelected, i, j);
                 updateSublistPrioValues(sublist, dateSelected, i, j);

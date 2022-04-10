@@ -19,7 +19,8 @@ import './styles/main/3-lists-checked.css';
     // indicator only updates on the first list even when prio is changed on a different list
         // OPEN >> prio-indicator.js
 
-//
+// *** BUG with add sublist btn
+    // sublists added from add sublist button does not inheric checkmark data
 
 /*
 TO DO
