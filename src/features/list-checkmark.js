@@ -15,8 +15,26 @@ const updateStorage = e => {
     const list = e.path[2];
     const listIndex = listsWrapperNodes.indexOf(list);
 
-    if (listsArr[listIndex].checked) {listsArr[listIndex].checked = false;}
-    else {listsArr[listIndex].checked = true;};
+    const listNodes = e.path[2].childNodes;
+
+    if (listsArr[listIndex].checked) {
+        listsArr[listIndex].checked = false;
+        listNodes.forEach((node, i) => {
+            if (node.classList.contains('sublist-wrapper')) {
+                listsArr[listIndex].sublists[i-1].checked = false;
+                localStorage.setItem(dateSelected, JSON.stringify(listsArr));
+            }
+        })
+    }
+    else {
+        listsArr[listIndex].checked = true;
+        listNodes.forEach((node, i) => {
+            if (node.classList.contains('sublist-wrapper')) {
+                listsArr[listIndex].sublists[i-1].checked = true;
+                localStorage.setItem(dateSelected, JSON.stringify(listsArr));
+            }
+        })
+    };
 
     localStorage.setItem(dateSelected, JSON.stringify(listsArr));
 }
@@ -30,7 +48,6 @@ const domListChangesSublist = list => {
     const listHeader = list[0];
     const listHeaderChecked = listHeader.children[0].classList.contains('list-checkmark-checked');
     const sublistArray = [];
-    
     for (let i = 1; i < list.length; i++) {sublistArray.push(list[i]);};
 
     if (listHeaderChecked) {
@@ -38,6 +55,7 @@ const domListChangesSublist = list => {
             const checkmark = sublist.children[0];
             const checkmarkChecked = checkmark.classList.contains('sublist-checkmark-checked');
             !checkmarkChecked ? toggleSublist(sublist) : 0;
+            console.log('check');
         });
     }
 
@@ -52,25 +70,33 @@ const domListChangesSublist = list => {
 
 const toggleSublist = sublist => {
     if (sublist.classList.contains('sublist-wrapper')) {
-
         toggleSublistLogic(sublist);
     }
 }
 
-// from edit-list.js
-const updateCheckedStatus = (currentList, listDom) => {
+// for edit-list.js
+const updateCheckedStatus = (currentList, listDom, listsArr, listsDom, dateSelected) => {
     const listCheckmark = listDom.childNodes[0].childNodes[0];
+
     
     const listTitle = listDom.childNodes[0].childNodes[1];
     const listNodes = listDom.childNodes;
+    const sublistCheckedStatuses = [];
+
+    currentList.sublists.forEach(sublist => {
+        sublistCheckedStatuses.push(sublist.checked);
+    });
+    
+    
 
     if (currentList.checked) {
         listCheckmark.classList.toggle('list-checkmark-checked');
         listTitle.classList.toggle('list-title-checked');
-        listNodes.forEach(node => {
+        listNodes.forEach((node, i) => {
             if (node.classList.contains('sublist-wrapper')) {
                 const sublist = node;
-                toggleSublistLogic(sublist);
+                currentList.sublists[i-1].checked = true;
+                localStorage.setItem(dateSelected, JSON.stringify(listsArr));
             }
         }) 
     }

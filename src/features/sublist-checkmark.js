@@ -6,6 +6,65 @@ const sublistCheckmarkEvent = e => {
     const prioLevel = e.path[1].children[4];
     domSublistChange(checkmark, sublistDesc, sublistTime, sublistDuration, prioLevel);
     domSublistChangesList(e);
+    updateStorage(e);
+
+
+};
+
+const updateSublistCheckedStatus = (sublist, dateSelected, i, j) => {
+
+    const checkmark = sublist.childNodes[0];
+    const desc = sublist.childNodes[1];
+    const time = sublist.childNodes[2];
+    const duration = sublist.childNodes[3];
+    const prio = sublist.childNodes[4];
+
+    const listsArr = JSON.parse(localStorage.getItem(dateSelected));
+    const checked = listsArr[i].sublists[j].checked;
+    if (checked) {domSublistChange(checkmark, desc, time, duration, prio)};
+};
+
+const checkOtherSublists = (storageLists, listIndex) => {
+
+    const checkedStatuses = [];
+    storageLists[listIndex].sublists.forEach(sublist => {
+        checkedStatuses.push(sublist.checked);
+    });
+
+    if (checkedStatuses.includes(false)) {
+        storageLists[listIndex].checked = false;
+        return storageLists;
+    }
+
+    else {
+        storageLists[listIndex].checked = true;
+        return storageLists;
+    }
+    
+};
+
+const updateStorage = e => {
+    const list = e.path[2];
+    const listWrapperNodes = e.path[3].childNodes;
+    const listIndex = Array.from(listWrapperNodes).indexOf(list);
+
+    const sublist = e.path[1];
+    const listNodes = e.path[2].childNodes;
+    const sublistIndex = Array.from(listNodes).indexOf(sublist) - 1;
+
+    const dateSelected = document.querySelector('input[type=date]').value;
+    const storageLists = JSON.parse(localStorage.getItem(dateSelected));
+    const storageList = storageLists[listIndex];
+
+    const checked = e.target.classList.contains('sublist-checkmark-checked');
+    checked ? 
+    storageList.sublists[sublistIndex].checked = true : 
+    storageList.sublists[sublistIndex].checked = false;
+
+    // updates list checked status from storage if other sublists are checked;
+    const newStorage = checkOtherSublists(storageLists, listIndex);
+    
+    localStorage.setItem(dateSelected, JSON.stringify(newStorage));
 };
 
 const domSublistChange = (checkmark,desc,time,duration,prio) => {
@@ -65,4 +124,4 @@ const isSublistChecked = sublist => {
 }
 
 
-export {sublistCheckmarkEvent, toggleListHeader};
+export {sublistCheckmarkEvent, toggleListHeader, updateSublistCheckedStatus};

@@ -14,6 +14,7 @@ const addListBtn = () => {
     btn.addEventListener('click', e => {
 
         insertList(listsWrapper);
+        
         addListToStorage();
 
         const dateSelected = document.querySelector('input[type=date]').value;

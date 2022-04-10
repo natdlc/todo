@@ -6,6 +6,7 @@ import {
     updateSublistPrioValues, 
     updatePrioIndicator } from "./edit-sublist";
 import { updateCheckedStatus } from "./list-checkmark";
+import { updateSublistCheckedStatus } from "./sublist-checkmark";
 
 const setListTitles = (listsArr, dateSelected) => {
     for (let i = 0; i < listsArr.length; i++) {
@@ -15,7 +16,6 @@ const setListTitles = (listsArr, dateSelected) => {
         const listsDom = document.querySelectorAll('.list');
         const listDom = listsDom[i];
         const listTitle = listDom.children[0].children[1];
-        
         listTitle.innerText = currentList.title;
         
         if (currentList.hasOwnProperty('sublists')) {
@@ -30,11 +30,12 @@ const setListTitles = (listsArr, dateSelected) => {
                 // editSublistTime()
                 // editSublistDuration()
                 // editSublistPrio()
+                updateSublistCheckedStatus(sublist, dateSelected, i, j);
                 updateSublistInnerTexts(sublist, dateSelected, i, j);
                 updateSublistPrioValues(sublist, dateSelected, i, j);
             }
         }
-        updateCheckedStatus(currentList, listDom);
+        updateCheckedStatus(currentList, listDom, listsArr, listsDom, dateSelected);
         updatePrioIndicator(listDom);
 
         listTitle.addEventListener('input', e => {updateStorage(i, dateSelected, e)});
