@@ -83,18 +83,17 @@ const updateCheckedStatus = (currentList, listDom, listsArr, listsDom, dateSelec
     const listNodes = listDom.childNodes;
     const sublistCheckedStatuses = [];
 
-    currentList.sublists.forEach(sublist => {
-        sublistCheckedStatuses.push(sublist.checked);
-    });
-    
-    
+    if (currentList.sublists) {
+        currentList.sublists.forEach(sublist => {
+            sublistCheckedStatuses.push(sublist.checked);
+        });
+    }
 
     if (currentList.checked) {
         listCheckmark.classList.toggle('list-checkmark-checked');
         listTitle.classList.toggle('list-title-checked');
         listNodes.forEach((node, i) => {
             if (node.classList.contains('sublist-wrapper')) {
-                const sublist = node;
                 currentList.sublists[i-1].checked = true;
                 localStorage.setItem(dateSelected, JSON.stringify(listsArr));
             }

@@ -50,7 +50,6 @@ const updateStorage = (listsWrapper, listChildNodes, dateSelected, parentList) =
         if (listChildNodes[i].classList.contains('sublist-wrapper')) {
             const sublist = listChildNodes[i];
             const sublistDesc = sublist.childNodes[1];
-            
             sublistDesc.addEventListener('input', e => {
                 updateStorageEvent(i, e, listsWrapper, dateSelected, parentList)
             });

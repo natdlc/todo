@@ -24,12 +24,21 @@ const addSublistBtnEvent = e => {
     addToStorage(e, parentList);
 
     const listsWrapper = Array.from(parentList.parentElement.childNodes);
-
     //edit sublist desc functionality
     const listChildNodes = parentList.childNodes;
     updateStorage(listsWrapper, listChildNodes, dateSelected, parentList)
 
+    //uncheck list header checkmark if sublist is added
+    const listIndex = listsWrapper.indexOf(parentList);
+    uncheckListHeaderStorage(dateSelected, listIndex);
+
 };
+
+const uncheckListHeaderStorage = (dateSelected, listIndex) => {
+    const listsArr = JSON.parse(localStorage.getItem(dateSelected));
+    listsArr[listIndex].checked = false;
+    localStorage.setItem(dateSelected, JSON.stringify(listsArr));
+}
 
 const addToStorage = (e, parentList) => {
     const currentDate = document.querySelector('input[type=date]').value;
