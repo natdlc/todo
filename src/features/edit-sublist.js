@@ -94,6 +94,11 @@ const updateStorage = (listsWrapper, listChildNodes, dateSelected, parentList) =
             sublistTime.addEventListener('input', e => {
                 updateSublistTimeStorageEvent(i, e, listsWrapper, dateSelected, parentList);
             });
+
+            const sublistDuration = sublist.childNodes[3];
+            sublistDuration.addEventListener('input', e => {
+                updateSublistDurationStorageEvent(i, e, listsWrapper, dateSelected, parentList);
+            });
         }
     }
 }
@@ -111,6 +116,14 @@ const updateSublistTimeStorageEvent = (i, e, listsWrapper, dateSelected, parentL
     const listIndex = listsWrapper.indexOf(parentList);
     const sublistIndex = i-1;
     listsArr[listIndex].sublists[sublistIndex].time = e.target.innerText;
+    localStorage.setItem(dateSelected, JSON.stringify(listsArr));
+}
+
+const updateSublistDurationStorageEvent = (i, e, listsWrapper, dateSelected, parentList) => {
+    const listsArr = JSON.parse(localStorage.getItem(dateSelected));
+    const listIndex = listsWrapper.indexOf(parentList);
+    const sublistIndex = i-1;
+    listsArr[listIndex].sublists[sublistIndex].duration = e.target.innerText;
     localStorage.setItem(dateSelected, JSON.stringify(listsArr));
 }
 
