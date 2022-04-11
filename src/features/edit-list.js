@@ -2,7 +2,9 @@ import { insertList } from "../dom/main/1-lists-wrapper/10-list";
 import { insertSublistWrapper } from '../dom/main/1-lists-wrapper/12-sublist.js';
 import { 
     editSublistDesc, 
-    updateSublistInnerTexts, 
+    updateSublistDescInnerTexts, 
+    editSublistTime,
+    updateSublistTimeInnerTexts,
     updateSublistPrioValues, 
     updatePrioIndicator } from "./edit-sublist";
 import { updateCheckedStatus } from "./list-checkmark";
@@ -25,12 +27,13 @@ const setListTitles = (listsArr, dateSelected) => {
                 const sublist = listDom.childNodes[j+1];
 
                 // add event listener for each sublist
-                // sublist description
-                editSublistDesc(sublist, dateSelected, i, j)
-                // editSublistTime()
+
+                editSublistDesc(sublist, dateSelected, i, j);
+                editSublistTime(sublist, dateSelected, i, j);
                 // editSublistDuration()
                 updateSublistCheckedStatus(sublist, dateSelected, i, j);
-                updateSublistInnerTexts(sublist, dateSelected, i, j);
+                updateSublistDescInnerTexts(sublist, dateSelected, i, j);
+                updateSublistTimeInnerTexts(sublist, dateSelected, i, j);
                 updateSublistPrioValues(sublist, dateSelected, i, j);
             }
         }
