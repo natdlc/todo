@@ -5,6 +5,8 @@ import {
     updateSublistDescInnerTexts, 
     editSublistTime,
     updateSublistTimeInnerTexts,
+    editSublistDuration,
+    updateSublistDurationInnerTexts,
     updateSublistPrioValues, 
     updatePrioIndicator } from "./edit-sublist";
 import { updateCheckedStatus } from "./list-checkmark";
@@ -30,10 +32,15 @@ const setListTitles = (listsArr, dateSelected) => {
 
                 editSublistDesc(sublist, dateSelected, i, j);
                 editSublistTime(sublist, dateSelected, i, j);
-                // editSublistDuration()
+
+                editSublistDuration(sublist, dateSelected, i, j);
+
                 updateSublistCheckedStatus(sublist, dateSelected, i, j);
                 updateSublistDescInnerTexts(sublist, dateSelected, i, j);
                 updateSublistTimeInnerTexts(sublist, dateSelected, i, j);
+
+                updateSublistDurationInnerTexts(sublist, dateSelected, i, j);
+
                 updateSublistPrioValues(sublist, dateSelected, i, j);
             }
         }

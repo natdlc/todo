@@ -24,6 +24,17 @@ const editSublistTime = (sublist, dateSelected, i, j) => {
     })
 }
 
+const editSublistDuration = (sublist, dateSelected, i, j) => {
+    const sublistDuration = sublist.childNodes[3];
+
+    sublistDuration.addEventListener('input', e => {
+        const domDuration = e.target.innerText;
+        const listsArr = JSON.parse(localStorage.getItem(dateSelected));
+        listsArr[i].sublists[j].duration = domDuration;
+        localStorage.setItem(dateSelected, JSON.stringify(listsArr));
+    })
+}
+
 const updateSublistDescInnerTexts = (sublist, dateSelected, i, j) => {
     const sublistDesc = sublist.children[1];
     const listsArr = JSON.parse(localStorage.getItem(dateSelected))
@@ -34,6 +45,12 @@ const updateSublistTimeInnerTexts = (sublist, dateSelected, i, j) => {
     const sublistTime = sublist.children[2];
     const listsArr = JSON.parse(localStorage.getItem(dateSelected))
     sublistTime.innerText = listsArr[i].sublists[j].time;
+}
+
+const updateSublistDurationInnerTexts = (sublist, dateSelected, i, j) => {
+    const sublistDuration = sublist.children[3];
+    const listsArr = JSON.parse(localStorage.getItem(dateSelected))
+    sublistDuration.innerText = listsArr[i].sublists[j].duration;
 }
 
 const updateSublistPrioValues = (sublist, dateSelected, i, j) => {
@@ -100,8 +117,10 @@ const updateSublistTimeStorageEvent = (i, e, listsWrapper, dateSelected, parentL
 export {
     editSublistDesc, 
     editSublistTime,
+    editSublistDuration,
     updateSublistDescInnerTexts, 
     updateSublistTimeInnerTexts,
+    updateSublistDurationInnerTexts,
     updateStorage, 
     updateSublistPrioValues,
     updatePrioIndicator };
