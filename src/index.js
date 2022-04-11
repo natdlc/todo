@@ -15,14 +15,14 @@ import './styles/main/3-lists-checked.css';
     addListBtn();
 })();
 
-// *** Bug with Priority Indicator (complete)
+// *** Bug with Priority Indicator (fixed)
     // indicator only updates on the first list even when prio is changed on a different list
         // OPEN >> prio-indicator.js
 
-// *** BUG with add sublist btn (complete)
+// *** BUG with add sublist btn (fixed)
     // sublists added from add sublist button does not inheric checkmark data
 
-// *** BUG with deleting sublist 
+// *** BUG with deleting sublist (fixed)
     // deleting a sublist with high / medium prio does not remove the prio indicator
 
 /*
