@@ -1,5 +1,11 @@
 # todo
 
+A simple ToDo list inspired by Google Keep. Made purely with raw HTML, CSS, and JavaScript, with the help of Webpack. 
+
+I made this app before I had any knowledge of React, so you will notice how imperative my approach with this project is.
+
+The 'Today' and 'Tomorrow' buttons are still non-functional, and the app only uses local storage.
+
 <!-- 
 local storage
 
