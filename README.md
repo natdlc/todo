@@ -6,6 +6,21 @@ I made this app before I had any knowledge of React, so you will notice how impe
 
 The 'Today' and 'Tomorrow' buttons are still non-functional, and the app only uses local storage.
 
+Features:
+
+1. Add list
+2. Add sublist
+3. Saves in local storage with Date selection
+4. Delete list
+5. Delete sublist
+6. Edit list and autosave when updated
+7. Edit sublist and autosave when updated
+8. List checkmark
+9. Priority indicator
+10. Sublist checkmark
+
+Please feel free to fork or send me a message through dev.natcorpuz@gmail.com
+
 <!-- 
 local storage
 
